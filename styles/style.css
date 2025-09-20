@@ -3,6 +3,15 @@
   --secondary-color: white;
   --text-color: black;
   --background-color: lightblue;
+  --color-teal-profundo: #2F6F68;
+  --color-verde-esmeralda: #6BAE9F;
+  --color-verde-oliva: #8A9B65;
+  --color-dusty-blue: #7AA5A2;
+  --color-durazno: #ECA47B;
+  --color-terracota: #D96E3B;
+  --color-beige-fondo: #F4EFE5;
+  --color-marron-tierra: #5A4032;
+}
 
 }
 
@@ -10,17 +19,28 @@ body {
   margin: 0;
 }
 
-.beth-ellen-regular {
-  font-family: "Beth Ellen", cursive;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1.8em;
-  color: rgb(27, 107, 73);
+.logo {
+  width: 60px; 
+  height: 60px;
 }
 
 .hero-container {
   max-width: 100%;
+  background-color: var(--color-beige-fondo);
 }
+
+.hero-text-container {
+  padding-left: 10em;
+}
+
+.slogan {
+  font-family: "Beth Ellen", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.9em;
+  color: #a04430;
+}
+
 
 .hero-photo {
   position: relative;
@@ -56,20 +76,16 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0) 70%, #fff 100%);
+  background: linear-gradient(to left, rgba(255, 255, 255, 0) 70%, #F4EFE5 100%);
 
-}
-
-.hero .row {
-  --bs-gutter-x: 2.5rem;
 }
 
 /* Gradient background for the feature row */
 .feature-gradient {
   background: linear-gradient(to right,
-      #ff6f61 0%,     /* coral / reddish on the left */
-      #b33e42 50%,    /* soft pink in the middle */
-      #843cad 100%    /* light pastel pink on the right */
+      #e6c3c0 0%,     /* coral / reddish on the left */
+      #609b45 50%,    /* soft pink in the middle */
+      #6fb077 100%    /* light pastel pink on the right */
   );
   color: #fff; /* make text white for contrast */
 }
@@ -87,3 +103,11 @@ body {
 .feature-gradient a.btn:hover {
   background-color: rgba(255,255,255,0.4);
 }
+
+.border-top, footer {
+  background-color: var(--color-verde-oliva);
+  color: #1a1a1a; /* dark text for contrast */
+}
+
+
+

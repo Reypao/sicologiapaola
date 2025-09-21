@@ -11,8 +11,7 @@
   --color-terracota: #D96E3B;
   --color-beige-fondo: #F4EFE5;
   --color-marron-tierra: #5A4032;
-}
-
+  --color-dark-red: #a04430;
 }
 
 body {
@@ -38,10 +37,13 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 1.9em;
-  color: #a04430;
+  color: var(--color-dark-red);
 }
 
-
+h2 {
+  color: var(--color-dark-red);
+}
+ 
 .hero-photo {
   position: relative;
   display: inline-block;
@@ -92,11 +94,11 @@ body {
 
 .feature-gradient p,
 .feature-gradient a {
-  color: #fff !important;
+  color: #fdfcfc !important;
 }
 
 .feature-gradient a.btn {
-  background-color: rgba(176, 184, 25, 0.605);
+  background-color: rgba(114, 119, 14, 0.605);
   border: none;
   color: #fff;
 }
@@ -104,10 +106,29 @@ body {
   background-color: rgba(255,255,255,0.4);
 }
 
-.border-top, footer {
+.border-top {
   background-color: var(--color-verde-oliva);
-  color: #1a1a1a; /* dark text for contrast */
+  color: #2c2828; /* dark text for contrast */
 }
+
+/* Testimonials look & spacing */
+.testimonial-card { position: relative; }
+.testimonial-card .quote-mark {
+  font-size: 2rem;
+  line-height: 1;
+  vertical-align: baseline;
+  opacity: .35;
+}
+
+/* TestimonialMake indicators subtle and aligned */
+
+#testimonialsCarousel .carousel-indicators [data-bs-target] {
+  width: 10px; height: 10px; border-radius: 50%;
+}
+#testimonialsCarousel .carousel-indicators {
+  bottom: -2rem;
+}
+
 
 
 

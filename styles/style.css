@@ -18,6 +18,11 @@ body {
   margin: 0;
 }
 
+.nav-link {
+  color: var(--color-dark-red);
+  
+}
+
 .logo {
   width: 60px; 
   height: 60px;

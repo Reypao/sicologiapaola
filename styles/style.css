@@ -14,6 +14,11 @@
   --color-dark-red: #a04430;
 }
 
+.active {
+  color: var(--primary-color);
+  background-color: lightgreen;
+}
+
 body {
   margin: 0;
 }
@@ -150,7 +155,7 @@ h2 {
   text-shadow: 2px 2px 2px black;
 }
 
-/* font "sobre mi" */
+/* about page "sobre mi" */
 
 .permanent-marker-regular {
   font-family: "Permanent Marker", cursive;
@@ -160,7 +165,31 @@ h2 {
 
 .paola-name {
   font-family: 'Permanent Marker', cursive;
-  color: #e26d5a; /* optional highlight color */
+  color: #af802b; /* optional highlight color */
+  font-size: 1.4em;
+}
+
+.about-text-box {
+  position: relative;
+  background: #fbe8e0;
+  z-index: 2;
+  margin-left: -3rem;
+
+}
+
+.about-text-box p {
+  font-size: 1.2em;
+  color: black;
+}
+
+/* work with paola */
+.work-with-paola i {
+  font-size: 1.5rem;
+  color: #e26d5a;
+}
+
+.py-5 {
+  background-color: #fae4d9;
 }
 
 

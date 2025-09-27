@@ -10,7 +10,7 @@
   --color-durazno: #ECA47B;
   --color-terracota: #D96E3B;
   --color-beige-fondo: #F4EFE5;
-  --color-marron-tierra: #5A4032;
+  --color-marron-tierra: #5A4032;
   --color-dark-red: #a04430;
 }
 
@@ -29,7 +29,7 @@ body {
 }
 
 .logo {
-  width: 60px; 
+  width: 60px;
   height: 60px;
 }
 
@@ -53,7 +53,7 @@ body {
 h2 {
   color: var(--color-dark-red);
 }
- 
+
 .hero-photo {
   position: relative;
   display: inline-block;
@@ -76,7 +76,7 @@ h2 {
       rgba(0, 0, 0, 0) 100%);
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
-  
+
 }
 
 
@@ -95,11 +95,15 @@ h2 {
 /* Gradient background for the feature row */
 .feature-gradient {
   background: linear-gradient(to right,
-      #e6c3c0 0%,     /* coral / reddish on the left */
-      #609b45 50%,    /* soft pink in the middle */
-      #6fb077 100%    /* light pastel pink on the right */
-  );
-  color: #fff; /* make text white for contrast */
+      #e6c3c0 0%,
+      /* coral / reddish on the left */
+      #609b45 50%,
+      /* soft pink in the middle */
+      #6fb077 100%
+      /* light pastel pink on the right */
+    );
+  color: #fff;
+  /* make text white for contrast */
 }
 
 .feature-gradient p,
@@ -112,17 +116,22 @@ h2 {
   border: none;
   color: #fff;
 }
+
 .feature-gradient a.btn:hover {
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .border-top {
   background-color: var(--color-verde-oliva);
-  color: #2c2828; /* dark text for contrast */
+  color: #2c2828;
+  /* dark text for contrast */
 }
 
 /* Testimonials look & spacing */
-.testimonial-card { position: relative; }
+.testimonial-card {
+  position: relative;
+}
+
 .testimonial-card .quote-mark {
   font-size: 2rem;
   line-height: 1;
@@ -133,22 +142,25 @@ h2 {
 /* TestimonialMake indicators subtle and aligned */
 
 #testimonialsCarousel .carousel-indicators [data-bs-target] {
-  width: 10px; height: 10px; border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
 }
+
 #testimonialsCarousel .carousel-indicators {
   bottom: -2rem;
 }
 
 .social-facebook:hover {
-  color: var(--primary-color) ;
+  color: var(--primary-color);
 }
 
 .social-instagram:hover {
-  color: var(--color-dark-red) ;
+  color: var(--color-dark-red);
 }
 
 .social-tiktok:hover {
-  color: red ;
+  color: red;
 }
 
 .footer-container {
@@ -165,7 +177,8 @@ h2 {
 
 .paola-name {
   font-family: 'Permanent Marker', cursive;
-  color: #af802b; /* optional highlight color */
+  color: #af802b;
+  /* optional highlight color */
   font-size: 1.4em;
 }
 
@@ -192,5 +205,29 @@ h2 {
   background-color: #fae4d9;
 }
 
+.text-handwrite {
+  font-family: "Shadows Into Light", cursive;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: .1em;
+  text-shadow: 2px 2px 2px rgb(248, 192, 192);
+}
 
+.btn-reserva {
+  background-color: var(--color-dark-red);
+  color: white;
+}
 
+.btn-reserva:hover {
+  background-color: var(--color-durazno);
+  border: 1.5px solid var(--color-dark-red);
+}
+
+.text-important {
+  font-family: "Shadows Into Light", cursive;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: .1em;
+  text-shadow: 2px 2px 2px rgb(248, 192, 192);
+  font-size: 1.5em;
+}

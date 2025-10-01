@@ -79,7 +79,7 @@ h2 {
 
 }
 
-.hero-photo::after, {
+.hero-photo::after {
   /* Degradado encima */
   content: "";
   position: absolute;
@@ -245,6 +245,12 @@ h2 {
   width: 100%;
   display: block;
 }
+
+.bg-pastel-green {
+  background-color: #effaef; /* soft pastel green */
+}
+
+
 
 
 

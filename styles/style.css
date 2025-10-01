@@ -61,7 +61,7 @@ h2 {
   background: #e1bcbc;
 }
 
-.hero-photo img {
+.hero-photo img, .podcast-hero-img {
   display: block;
   height: 500px;
   max-width: 100%;
@@ -79,8 +79,7 @@ h2 {
 
 }
 
-
-.hero-photo::after {
+.hero-photo::after, {
   /* Degradado encima */
   content: "";
   position: absolute;
@@ -246,6 +245,8 @@ h2 {
   width: 100%;
   display: block;
 }
+
+
 
 
 

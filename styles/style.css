@@ -254,6 +254,7 @@ h2 {
   max-height: 300px; /* Adjust as needed */
   width: 100%;
   display: block;
+  object-position: center 25%;
 }
 
 .bg-pastel-green {

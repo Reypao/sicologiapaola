@@ -23,6 +23,12 @@ body {
   margin: 0;
 }
 
+.barra-nav {
+  background-color: #9ad061; 
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
 .nav-link {
   color: var(--color-dark-red);
   font-size: 1.5em;
@@ -233,6 +239,10 @@ h2 {
 
 /* Podcast Two columns, full width */
 
+.podcast-title {
+  font-family: 'Permanent Marker', cursive;
+}
+
 .podcast-left {
     background: linear-gradient(to podcast-left, #d9e8ef 90%, transparent 10%);
     min-height: 100%;
@@ -249,6 +259,13 @@ h2 {
 .bg-pastel-green {
   background-color: #effaef; /* soft pastel green */
 }
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+
 
 
 

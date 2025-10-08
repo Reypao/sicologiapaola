@@ -12,6 +12,9 @@
   --color-beige-fondo: #F4EFE5;
   --color-marron-tierra: #5A4032;
   --color-dark-red: #a04430;
+  --pg-brand: #9ad061;/* pastel green used across trabaja con Paola site */
+  --pg-border: #e8e8e8;
+
 }
 
 .active {
@@ -24,7 +27,7 @@ body {
 }
 
 .barra-nav {
-  background-color: #9ad061; 
+  background-color: #9ad061;
   padding-top: 1em;
   padding-bottom: 1em;
 }
@@ -67,7 +70,8 @@ h2 {
   background: #e1bcbc;
 }
 
-.hero-photo img, .podcast-hero-img {
+.hero-photo img,
+.podcast-hero-img {
   display: block;
   height: 500px;
   max-width: 100%;
@@ -244,21 +248,23 @@ h2 {
 }
 
 .podcast-left {
-    background: linear-gradient(to podcast-left, #d9e8ef 90%, transparent 10%);
-    min-height: 100%;
-    padding: 60px 40px;
-    text-align: center;
+  background: linear-gradient(to podcast-left, #d9e8ef 90%, transparent 10%);
+  min-height: 100%;
+  padding: 60px 40px;
+  text-align: center;
 }
 
 .podcast-hero-img {
-  max-height: 300px; /* Adjust as needed */
+  max-height: 300px;
+  /* Adjust as needed */
   width: 100%;
   display: block;
   object-position: center 30%;
 }
 
 .bg-pastel-green {
-  background-color: #effaef; /* soft pastel green */
+  background-color: #effaef;
+  
 }
 
 .card-img-top {
@@ -266,15 +272,91 @@ h2 {
   object-fit: cover;
 }
 
+/* TRABAJA CON PAOLA*/
+.pg-lotus {
+  width: 64px;
+  height: 64px;
+  display: inline-block;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .06));
+}
 
+.pg-subtle {
+  color: #7d7d7d;
+}
 
+.pg-card {
+  background: #fff;
+  border: 1px solid var(--pg-border);
+  border-radius: .5rem;
+}
 
+.pg-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: .5rem;
+}
 
+.pg-board {
+  background: #fff;
+  border: 1px solid var(--pg-border);
+  border-radius: .5rem;
+}
 
+.pg-col {
+  padding: 1rem;
+  border-right: 1px solid var(--pg-border);
+}
 
+.pg-col:last-child {
+  border-right: none;
+}
 
+.pg-week {
+  text-transform: uppercase;
+  font-size: .76rem;
+  color: #8a8a8a;
+  letter-spacing: .02em;
+}
 
+.pg-day {
+  font-weight: 600;
+  color: #2b2b2b;
+}
 
+.pg-date {
+  color: #909090;
+}
 
+.pg-slot {
+  width: 100%;
+  margin-bottom: .6rem;
+  border: 1px solid var(--pg-border);
+  background: #fff;
+  border-radius: .4rem;
+  padding: .55rem .75rem;
+  font-weight: 500;
+  transition: .15s;
+}
 
+.pg-slot:hover {
+  border-color: var(--pg-brand);
+  box-shadow: 0 0 0 .2rem rgba(154, 208, 97, .15);
+  transform: translateY(-1px);
+}
 
+.pg-powered {
+  color: #9a9a9a;
+  font-size: .85rem;
+}
+
+@media (max-width: 991.98px) {
+  .pg-col {
+    border-right: none;
+    border-bottom: 1px solid var(--pg-border);
+  }
+
+  .pg-col:last-child {
+    border-bottom: none;
+  }
+}

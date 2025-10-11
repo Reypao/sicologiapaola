@@ -356,7 +356,9 @@ h2 {
 /* sesiones*/
 
 .sesion-detail {
-  background-color: var(--color-verde-oliva) ;
+  background-color: var(--color-beige-fondo);
+  padding-bottom: 2%;
+  font-size: 1.5em;
 }
 
 

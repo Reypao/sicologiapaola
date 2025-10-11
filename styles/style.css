@@ -298,9 +298,12 @@ h2 {
 }
 
 .pg-board {
-  background: #fff;
-  border: 1px solid var(--pg-border);
+  background: #fbe9e9;
   border-radius: .5rem;
+  max-width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .pg-col {
@@ -350,6 +353,13 @@ h2 {
   font-size: .85rem;
 }
 
+/* sesiones*/
+
+.sesion-detail {
+  background-color: var(--color-verde-oliva) ;
+}
+
+
 @media (max-width: 991.98px) {
   .pg-col {
     border-right: none;
@@ -360,3 +370,4 @@ h2 {
     border-bottom: none;
   }
 }
+

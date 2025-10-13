@@ -12,9 +12,11 @@
   --color-beige-fondo: #F4EFE5;
   --color-marron-tierra: #5A4032;
   --color-dark-red: #a04430;
-  --pg-brand: #9ad061;/* pastel green used across trabaja con Paola site */
-  --pg-border: #e8e8e8;
-
+  --pg-brand: #9ad061;
+  --pg-border: #e8e8e8; /* pastel green used across trabaja con Paola site */
+  --hero-teal: #0f9e9a; /* sesion grupal-teal panel color */
+  --hero-cta: #f9683a; /* sesion grupal-orange button */
+  
 }
 
 .active {
@@ -264,7 +266,7 @@ h2 {
 
 .bg-pastel-green {
   background-color: #effaef;
-  
+
 }
 
 .card-img-top {
@@ -372,4 +374,79 @@ h2 {
     border-bottom: none;
   }
 }
+
+.px-5 {
+  padding-right: 3rem !important;
+  padding-left: 3rem !important;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: var(--color-beige-fondo);
+}
+
+/* sesion grupal*/
+
+ /* HERO full background with opacity overlay */
+.hero-grupal {
+  background-image: url('../images/grupalPaoWeb.jpg'); /* ✅images/ folder */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 50vh; /* taller hero section */
+  position: relative;
+  color: #fff;
+}
+
+/* Gradient + opacity overlay */
+.hero-grupal .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(15, 158, 154, 0.7),
+    rgba(0, 0, 0, 0.3)
+  );
+  opacity: 0.25; /* adjust strength of overlay */
+  z-index: 1;
+}
+
+/* Content styling */
+.hero-grupal .hero-content {
+  position: relative;
+  z-index: 2; /* places text above overlay */
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero-grupal h1 {
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: 800;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.hero-grupal p {
+  color: #f0f9f8;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+/* CTA Button */
+.btn-cta {
+  background-color: #f9683a;
+  border: none;
+  color: white;
+  font-weight: 700;
+  padding: 0.85rem 1.4rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-cta:hover {
+  background-color: #fa7d4e;
+  transform: translateY(-2px);
+}
+
+
+
+
+
+
 

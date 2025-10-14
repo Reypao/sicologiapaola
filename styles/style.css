@@ -276,8 +276,8 @@ h2 {
 
 /* TRABAJA CON PAOLA*/
 .pg-lotus {
-  width: 64px;
-  height: 64px;
+  width: 128px;
+  height: 128px;
   display: inline-block;
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .06));
 }
@@ -375,14 +375,6 @@ h2 {
   }
 }
 
-.px-5 {
-  padding-right: 3rem !important;
-  padding-left: 3rem !important;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  background-color: var(--color-beige-fondo);
-}
-
 /* sesion grupal*/
 
  /* HERO full background with opacity overlay */
@@ -405,7 +397,7 @@ h2 {
     rgba(15, 158, 154, 0.7),
     rgba(0, 0, 0, 0.3)
   );
-  opacity: 0.25; /* adjust strength of overlay */
+  opacity: 0.60; /* adjust strength of overlay */
   z-index: 1;
 }
 
@@ -413,30 +405,32 @@ h2 {
 .hero-grupal .hero-content {
   position: relative;
   z-index: 2; /* places text above overlay */
-  max-width: 700px;
   margin: 0 auto;
 }
 
 .hero-grupal h1 {
   font-size: clamp(1.8rem, 3vw, 3rem);
   font-weight: 800;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.995);
 }
 
 .hero-grupal p {
   color: #f0f9f8;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.995);
+  font-weight: 600;
+  font-size: 1.5em;
 }
 
 /* CTA Button */
 .btn-cta {
-  background-color: #f9683a;
+  background-color: var(--color-durazno);
   border: none;
   color: white;
   font-weight: 700;
   padding: 0.85rem 1.4rem;
   border-radius: 6px;
   transition: all 0.2s ease;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.995);
 }
 
 .btn-cta:hover {
@@ -444,7 +438,68 @@ h2 {
   transform: translateY(-2px);
 }
 
+/* Sobre Mi and picture */
 
+.about-section {
+  background-color: #fbf4f4;
+  
+}
+
+.about-text p {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: #090808;
+}
+
+.paola-name {
+  font-size: 2rem;
+}
+
+.about-image img {
+  width: 80%;            /* ✅ shrink the image */
+  max-width: 350px;      /* ✅ sets a size limit */
+  height: auto;
+  border-radius: 6px;
+}
+
+.about-image img:hover {
+  transform: scale(1.03);
+}
+
+.about-photo:hover {
+  transform: scale(1.02);
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-accent {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 90%;
+  height: 90%;
+  background-color: var(--pg-brand); /* soft pastel accent */
+  z-index: 0;
+  border-radius: 4px;
+}
+
+.about-photo {
+  position: relative;
+  z-index: 1;
+  border-radius: 6px;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Temas a discutir */
+.topics-section {
+  background: #fafafa;
+  position: relative;
+  overflow: hidden;
+}
 
 
 

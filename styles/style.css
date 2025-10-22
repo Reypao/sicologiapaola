@@ -520,6 +520,11 @@ h2 {
   font-family: "Beth Ellen", cursive;
 }
 
+.btn-enviar {
+  background-color: var(--color-dark-red);
+  color: white;
+}
+
 
 
 

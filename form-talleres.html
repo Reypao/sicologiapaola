@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Beth+Ellen&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" type="image/jpg" href="images/PsicologiaPao-icon.jpg">
+    <script src="scripts/form-talleres.js"></script>
 
 </head>
 
@@ -34,9 +35,10 @@
                     <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="sobremi.html">Sobre Mi</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="podcast.html">Podcast</a></li>
+                        <li class="nav-item"><a class="nav-link" href="podcast.html">Podcast</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="sesionprivada.html" data-bs-toggle="dropdown" id="menuPaola" role="button" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="sesionprivada.html" data-bs-toggle="dropdown"
+                                id="menuPaola" role="button" aria-expanded="false">
                                 Trabaja con Paola
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="menuPaola">
@@ -62,7 +64,8 @@
                                 <p class="lead text-center mb-4">Deja tus datos para recibir informacion sobre proximos
                                     talleres</p>
 
-                                <form action="#" id="tallerForm" method="POST">
+                                <form action="https://api.web3forms.com/submit" id="tallerForm" method="POST">
+                                    <input type="hidden" name="access_key" value="ad5980f2-328d-4ff7-b0ca-d069a97b7ad1"> <!-- codigo insertar para botom enviar -->
                                     <div class="mb-3">
                                         <label for="nombre" class="form-label">Nombre y Apellido</label>
                                         <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -72,7 +75,7 @@
                                         <input type="email" class="form-control" id="email" name="email" required>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="telefono" class="form-label">Telefono</label>
+                                        <label for="telefono" class="form-label">Telefono (opcional)</label>
                                         <input type="tel" class="form-control" id="telefono" name="telefono">
                                     </div>
                                     <div class="mb-3">
@@ -80,22 +83,37 @@
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="mb-2 form-check">
-                                                    <input type="checkbox" class="form-check-input" id="ansiedad" name="intereses[]" value="Ansiedad y Stress">
-                                                    <label for="ansiedad" class="form-check-label">Ansiedad y Stress</label>
+                                                    <input type="checkbox" class="form-check-input" id="ansiedad"
+                                                        name="intereses[]" value="Ansiedad y Stress">
+                                                    <label for="ansiedad" class="form-check-label">Ansiedad y
+                                                        Stress</label>
                                                 </div>
                                                 <div class="mb-2 form-check">
-                                                    <input type="checkbox" class="form-check-input" id="autoestima" name="intereses[]" value="Autoestima">
+                                                    <input type="checkbox" class="form-check-input" id="autoestima"
+                                                        name="intereses[]" value="Autoestima">
                                                     <label for="autoestima" class="form-check-label">Autoestima</label>
                                                 </div>
                                                 <div class="mb-2 form-check">
-                                                    <input type="checkbox" class="form-check-input" id="limites" name="intereses[]" value="Limites Y Comunicacion">
-                                                    <label for="limites" class="form-check-label">Limites y Comunicaciones</label>
+                                                    <input type="checkbox" class="form-check-input" id="limites"
+                                                        name="intereses[]" value="Limites Y Comunicacion">
+                                                    <label for="limites" class="form-check-label">Limites y
+                                                        Comunicaciones</label>
                                                 </div>
                                                 <div class="mb-2 form-check">
-                                                    <input type="checkbox" class="form-check-input" id="otros" name="intereses[]" value="Otros...">
+                                                    <input type="checkbox" class="form-check-input" id="otros"
+                                                        name="intereses[]" value="Otros...">
                                                     <label for="otros" class="form-check-label">Otros</label>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="mensaje" class="form-label">Mensaje (opcional)</label>
+                                        <textarea name="mensaje" id="mensaje" rows="3"
+                                            placeholder="Cuentame que Temas te interesa"
+                                            class="form-control"></textarea>
+                                        <div class="mt-3 d-flex justify-content-center">
+                                            <button class="btn btn-enviar" type="submit">Enviar</button>
                                         </div>
                                     </div>
                                 </form>

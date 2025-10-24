@@ -526,5 +526,14 @@ h2 {
 }
 
 
+/* background form-talleres */
 
+.form-talleres {
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+    url("images/groupPaoWeb.jpg") center / cover no-repeat;
+  background-attachment: fixed; /* optional: keeps it steady on scroll */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
 

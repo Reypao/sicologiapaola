@@ -29,7 +29,7 @@ body {
 }
 
 .barra-nav {
-  background-color: #9ad061;
+  background-color: var(--color-verde-oliva);
   padding-top: 1em;
   padding-bottom: 1em;
 }

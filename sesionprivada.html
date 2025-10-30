@@ -4,59 +4,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paola Guzman - Psicologa Social</title>
-  <!-- Meta Open Graph posicionamiento y contenido en redes sociales-->
-  <meta property="og:title" content="Paola Guzman - Psicologa Social y Terapeuta Femenina">
-  <meta property="og:description" content="Descubre los talleres, sesiones privadas y podcasts de Paola Guzmán. Bienestar emocional, autocuidado y salud mental femenina.">
+  <title>Paola Guzman - Sesión Privada</title>
+
+  <!-- Meta Open Graph -->
+  <meta property="og:title" content="Paola Guzman - Sesión Privada con Paola">
+  <meta property="og:description" content="Reserva tu sesión privada con Paola Guzmán. Bienestar emocional y acompañamiento personalizado.">
   <meta property="og:image" content="https://psicologiapaola.netlify.app/images/paolaWeb2.jpg">
-  <meta property="og:url" content="https://psicologiapaola.netlify.app/index.html">
+  <meta property="og:url" content="https://psicologiapaola.netlify.app/sesionprivada.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
-  <!-- Meta SEO para posicionamiento en motores de busqueda-->
-  <meta name="description" content="Sitio oficial de Paola Guzmán, Psicóloga Social. Explora sus talleres, sesiones grupales y podcasts sobre salud emocional y bienestar.">
-  <meta name="keywords" content="Psicologia Social, Bienestar, salud mental, talleres, sesiones, Paola Guzmán, Terapia, Autoestima, Ansiedad, Salud mental Femenina">
+
+  <!-- Meta SEO -->
+  <meta name="description" content="Reserva tu sesión privada con Paola Guzmán, Psicóloga Social y Terapeuta Femenina.">
+  <meta name="keywords" content="Psicología Social, Bienestar, Terapia, Sesión Privada, Paola Guzmán, Salud mental femenina">
   <meta name="author" content="Paola Guzmán">
   <meta name="robots" content="index, follow">
-  <!-- Bootstrap 5 -->
+
+  <!-- Bootstrap & Fonts -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Permanent+Marker&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Permanent+Marker&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/style.css">
   <link rel="icon" type="image/jpg" href="images/PsicologiaPao-icon.jpg">
+
+  <!-- Script de reservas -->
+  <script src="scripts/bookpriv.js" defer></script>
 </head>
 
 <body>
 
+  <!-- ======= NAVBAR ======= -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-light border-bottom sticky-top barra-nav">
       <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand d-flex align-items-center gap-3" href="#">
+
+        <a class="navbar-brand d-flex align-items-center gap-3" href="index.html">
           <img src="images/PsicologiaPao-icon.jpg" alt="Logo" class="rounded-circle logo">
           <div class="d-flex flex-column lh-sm">
             <span class="fw-bold">CHW - Terapeuta Femenina</span>
             <span class="text-muted small">PAOLA GUZMAN - Psicóloga Social</span>
           </div>
         </a>
+
         <div id="mainNav" class="collapse navbar-collapse">
           <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="sobremi.html">Sobre Mi</a></li>
             <li class="nav-item"><a class="nav-link" href="podcast.html">Podcast</a></li>
             <li class="nav-item dropdown">
-              <a class="nav-link active dropdown-toggle" href="trabajaconPaola.html" data-bs-toggle="dropdown"
-                id="menuPaola" role="button" aria-expanded="false">
+              <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown" id="menuPaola" role="button"
+                aria-expanded="false">
                 Trabaja con Paola
               </a>
               <ul class="dropdown-menu" aria-labelledby="menuPaola">
-                <li><a class="dropdown-item" href="sesionprivada.html">Sesion Privada</a></li>
-                <li><a class="dropdown-item" href="sesiongrupal.html">Session Grupal</a></li>
+                <li><a class="dropdown-item" href="sesionprivada.html">Sesión Privada</a></li>
+                <li><a class="dropdown-item" href="sesiongrupal.html">Sesión Grupal</a></li>
                 <li><a class="dropdown-item" href="talleres.html">Talleres</a></li>
+                <li><a class="dropdown-item" href="form-talleres.html">Inscripción Talleres</a></li>
               </ul>
             </li>
           </ul>
@@ -65,123 +72,109 @@
     </nav>
   </header>
 
-  <!-- ============BOOKING CONTENT ============ -->
-  <main class="py-4">
-    <!-- Top mark + title-->
-    <section class="text-center mb-5">
-      <!-- simple lotus-like SVG -->
-      <svg class="pg-lotus" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path fill="#ff6d5e" d="M32 6c4 9-1 16-1 16S22 15 32 6z" />
-        <path fill="#ffa46b" d="M32 6c-4 9 1 16 1 16s9-7-1-16z" />
-        <path fill="#79c39b" d="M12 30c10-3 19 2 19 2s-8 10-19 2z" />
-        <path fill="#4ea07a" d="M52 30c-10-3-19 2-19 2s8 10 19 2z" />
-        <circle cx="32" cy="42" r="10" fill="#f47e6d" />
-      </svg>
+  <!-- ======= MAIN ======= -->
+  <main class="py-5">
 
-      <h1 class="h4 fw-bold mt-2 mb-1">Paola Guzmán, CHW — Terapeuta Femenina</h1>
-      <div class="pg-subtle">Date &amp; Time</div>
+    <section class="text-center mb-4">
+      <h1 class="h4 fw-bold mt-2 mb-1">Reserva tu Sesión Privada</h1>
+      <p class="text-muted">Selecciona un horario disponible y completa el formulario de reserva.</p>
     </section>
 
-    <div class="container-fluid">
-      <!-- Appointment card -->
-      <div class="row g-3 align-items-center sesion-detail">
-        <div class="col-auto px-4">
-          <img src="images/paolaWeb4.jpg" alt="Paola Guzmán" class="pg-photo">
-        </div>
-        <div class="col">
-          <div class="fw-semibold">Primera Sesión Individual con Paola Guzmán</div>
-          <div class="text-muted">45 minutos @ $50.00</div>
-          <p class="mb-1 mt-2 medium">
-            Reserva una sesión de 45 minutos directamente con Paola. Lo que sea que estés viviendo,
-            podemos trabajarlo juntas.
-          </p>
-          <p class="mb-0 medium text-muted">
-            Si no ves un horario disponible, escríbenos a
-            <a href="mailto:lapsicologiadePao@gmail.com">lapsicologiadePao@gmail.com</a>.
-          </p>
-        </div>
-      </div>
-
-      <!-- Schedule grid -->
-      <section class="pg-board px-5 mt-4">
-        <div class="text-center small text-muted pt-3">
+    <div class="container">
+      <!-- GRID DE HORARIOS -->
+      <section class="pg-board px-3 mt-3">
+        <div class="text-center small text-muted pt-2">
           ZONA HORARIA: <span class="fw-semibold">Mountain Time (GMT-06:00)</span>
         </div>
 
-        <div class="row row-cols-1 row-cols-lg-5 g-0 mt-2">
+        <div class="row row-cols-1 row-cols-lg-4 g-3 mt-2">
           <div class="col pg-col">
             <div class="pg-week">Próxima semana</div>
             <div class="pg-day">Miércoles</div>
             <div class="pg-date mb-2">Oct 8</div>
-            <button class="pg-slot">9:00 AM</button>
-            <button class="pg-slot">9:30 AM</button>
-            <button class="pg-slot">10:00 AM</button>
-            <button class="pg-slot">12:00 PM</button>
-            <button class="pg-slot">2:00 PM</button>
+            <button class="pg-slot btn btn-outline-primary w-100 mb-2">9:00 AM</button>
+            <button class="pg-slot btn btn-outline-primary w-100 mb-2">10:00 AM</button>
+            <button class="pg-slot btn btn-outline-primary w-100 mb-2">11:30 AM</button>
           </div>
 
           <div class="col pg-col">
             <div class="pg-week">En 2 semanas</div>
             <div class="pg-day">Domingo</div>
             <div class="pg-date mb-2">Oct 12</div>
-            <button class="pg-slot">8:00 AM</button>
+            <button class="pg-slot btn btn-outline-primary w-100 mb-2">8:00 AM</button>
+            <button class="pg-slot btn btn-outline-primary w-100 mb-2">4:00 PM</button>
           </div>
 
           <div class="col pg-col">
             <div class="pg-week">En 3 semanas</div>
             <div class="pg-day">Miércoles</div>
             <div class="pg-date mb-2">Oct 15</div>
-            <button class="pg-slot">10:00 AM</button>
-            <button class="pg-slot">12:00 PM</button>
-            <button class="pg-slot">12:30 PM</button>
-            <button class="pg-slot">1:00 PM</button>
+            <button class="pg-slot btn btn-outline-primary w-100 mb-2">12:00 PM</button>
+            <button class="pg-slot btn btn-outline-primary w-100 mb-2">1:30 PM</button>
           </div>
 
           <div class="col pg-col">
             <div class="pg-week">En 4 semanas</div>
-            <div class="pg-day">Miércoles</div>
+            <div class="pg-day">Domingo</div>
             <div class="pg-date mb-2">Oct 29</div>
-            <button class="pg-slot">10:30 AM</button>
+            <button class="pg-slot btn btn-outline-primary w-100 mb-2">7:00 AM</button>
+            <button class="pg-slot btn btn-outline-primary w-100 mb-2">3:00 PM</button>
           </div>
-
-          <div class="col pg-col">
-            <div class="pg-week">En 5 semanas</div>
-            <div class="d-flex align-items-center justify-content-between">
-              <div>
-                <div class="pg-day">Domingo</div>
-                <div class="pg-date">Nov 2</div>
-              </div>
-              <a class="text-decoration-none small" href="#" aria-label="Siguiente semana">
-                <i class="bi bi-chevron-right"></i>
-              </a>
-            </div>
-            <button class="pg-slot">7:00 AM</button>
-            <button class="pg-slot">4:00 PM</button>
-          </div>
+        </div>
       </section>
 
-      <!-- Anchors for other dropdown options -->
-      <div class="container text-center my-5">
-        <section id="grupal" class="mt-5">
-          <h2 class="h5"><a href="sesiongrupal.html">Sesion Grupal</a></h2>
-          <p class="text-muted">Próximamente — horarios y fechas por anunciar.</p>
-        </section>
+      <!-- FORMULARIO DE RESERVA (oculto hasta seleccionar horario) -->
+      <div id="bookingFormContainer" class="mt-5 px-3" style="display: none;">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="fw-bold mb-3 text-center">Completa tu Reserva</h5>
 
-        <section id="taller" class="mt-4">
-          <h2 class="h5"><a href="form-talleres.html">Talleres</a></h2>
-          <p class="text-muted">Regístrate para recibir aviso cuando abramos cupos.</p>
-        </section>
+            <form id="bookingForm" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="ad5980f2-328d-4ff7-b0ca-d069a97b7ad1">
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="nombre" class="form-label">Nombre y Apellido</label>
+                  <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="fecha" class="form-label">Fecha seleccionada</label>
+                  <input type="text" class="form-control" id="fecha" name="fecha" readonly>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="hora" class="form-label">Hora seleccionada</label>
+                  <input type="text" class="form-control" id="hora" name="hora" readonly>
+                </div>
+
+                <div class="col-12">
+                  <label for="mensaje" class="form-label">Comentario (opcional)</label>
+                  <textarea id="mensaje" name="mensaje" rows="3" class="form-control"
+                    placeholder="Podés agregar un comentario o aclaración si lo deseas..."></textarea>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-center mt-4">
+                <button type="submit" class="btn btn-enviar">Confirmar Reserva</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
+
     </div>
   </main>
-  <!-- == ENDBOOKING CONTENT ==-->
 
-  <footer class="border-top py-3 footer'bg">
-    <div
-      class="container d-flex flex-column flex-md-row align-items-center justify-content-between text-white footer-container">
-
-      <!-- Left: Logo + Brand -->
-      <a class="navbar-brand d-flex align-items-center gap-2 mb-3 mb-md-0" href="#">
+  <!-- ======= FOOTER ======= -->
+  <footer class="border-top py-3 footer-bg">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between text-white footer-container">
+      <a class="navbar-brand d-flex align-items-center gap-2 mb-3 mb-md-0" href="index.html">
         <img src="images/PsicologiaPao-icon.jpg" alt="Logo" class="rounded-circle" style="width:40px; height:40px;">
         <div class="d-flex flex-column lh-sm">
           <span class="fw-bold">CHW - Terapeuta Femenina</span>
@@ -189,52 +182,33 @@
         </div>
       </a>
 
-      <!-- Middle: Links -->
       <div class="small mb-3 mb-md-0 text-white">
         © 2025 Paola Guzmán &nbsp; | &nbsp;
         <a href="#" class="text-decoration-none text-white">Privacy</a> &nbsp; | &nbsp;
         <a href="#" class="text-decoration-none text-white">Terms</a> &nbsp; | &nbsp;
         <a href="#" class="text-decoration-none text-white">Disclaimer</a> &nbsp; | &nbsp;
-        <a href="#" class="text-decoration-none text-white">Contact</a> &nbsp; | &nbsp;
-        <a href="#" class="text-decoration-none text-white">Website Credits</a>
+        <a href="#" class="text-decoration-none text-white">Contact</a>
       </div>
 
-      <!-- Right: Social icons -->
       <div class="d-flex gap-2">
-        <a href="#"
-          class="btn btn-outline-secondary btn-md rounded-circle d-flex align-items-center justify-content-center social-facebook"
+        <a href="#" class="btn btn-outline-secondary btn-md rounded-circle d-flex align-items-center justify-content-center"
           style="width:50px; height:50px;">
           <i class="bi bi-facebook fs-1"></i>
         </a>
-        <a href="#"
-          class="btn btn-outline-secondary btn-md rounded-circle d-flex align-items-center justify-content-center social-instagram"
+        <a href="#" class="btn btn-outline-secondary btn-md rounded-circle d-flex align-items-center justify-content-center"
           style="width:50px; height:50px;">
           <i class="bi bi-instagram fs-1"></i>
         </a>
-        <a href="#"
-          class="btn btn-outline-secondary btn-md rounded-circle d-flex align-items-center justify-content-center social-instagram"
+        <a href="#" class="btn btn-outline-secondary btn-md rounded-circle d-flex align-items-center justify-content-center"
           style="width:50px; height:50px;">
           <i class="bi bi-tiktok fs-1"></i>
         </a>
       </div>
-
     </div>
   </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Optional: click handler for slots (replace with your booking link) -->
-  <script>
-    document.querySelectorAll('.pg-slot').forEach(btn => {
-      btn.addEventListener('click', () => {
-        // Replace with your real checkout URL:
-        // window.location.href = 'https://tu-enlace-de-reserva.com?hora=' + encodeURIComponent(btn.textContent.trim());
-        alert('Reserva para: ' + btn.textContent.trim());
-      });
-    });
-  </script>
-
 </body>
-
 </html>

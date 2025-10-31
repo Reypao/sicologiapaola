@@ -1,33 +1,4 @@
-:root {
-  --primary-color: blue;
-  --secondary-color: white;
-  --text-color: black;
-  --background-color: lightblue;
-  --color-teal-profundo: #2F6F68;
-  --color-verde-esmeralda: #6BAE9F;
-  --color-verde-oliva: #8A9B65;
-  --color-dusty-blue: #7AA5A2;
-  --color-durazno: #ECA47B;
-  --color-terracota: #D96E3B;
-  --color-beige-fondo: #F4EFE5;
-  --color-marron-tierra: #5A4032;
-  --color-dark-red: #a04430;
-  --pg-brand: #9ad061;
-  --pg-border: #e8e8e8; /* pastel green used across trabaja con Paola site */
-  --hero-teal: #0f9e9a; /* sesion grupal-teal panel color */
-  --hero-cta: #f9683a; /* sesion grupal-orange button */
-  
-}
-
-.active {
-  color: var(--primary-color);
-  background-color: lightgreen;
-}
-
-body {
-  margin: 0;
-}
-
+@import url("base.css");
 .barra-nav {
   background-color: var(--color-verde-oliva);
   padding-top: 1em;
@@ -51,18 +22,6 @@ body {
 
 .hero-text-container {
   padding-left: 10em;
-}
-
-.slogan {
-  font-family: "Beth Ellen", cursive;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1.9em;
-  color: var(--color-dark-red);
-}
-
-h2 {
-  color: var(--color-dark-red);
 }
 
 .hero-photo {
@@ -180,12 +139,6 @@ h2 {
 
 /* about page "sobre mi" */
 
-.permanent-marker-regular {
-  font-family: "Permanent Marker", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
 .paola-name {
   font-family: 'Permanent Marker', cursive;
   color: #af802b;
@@ -212,18 +165,6 @@ h2 {
   color: #e26d5a;
 }
 
-.py-5 {
-  background-color: #fae4d9;
-}
-
-.text-handwrite {
-  font-family: "Shadows Into Light", cursive;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: .1em;
-  text-shadow: 2px 2px 2px rgb(248, 192, 192);
-}
-
 .btn-reserva {
   background-color: var(--color-dark-red);
   color: white;
@@ -232,15 +173,6 @@ h2 {
 .btn-reserva:hover {
   background-color: var(--color-durazno);
   border: 1.5px solid var(--color-dark-red);
-}
-
-.text-important {
-  font-family: "Shadows Into Light", cursive;
-  font-weight: 300;
-  font-style: normal;
-  letter-spacing: .1em;
-  text-shadow: 2px 2px 2px rgb(248, 192, 192);
-  font-size: 1.5em;
 }
 
 /* Podcast Two columns, full width */
@@ -539,11 +471,4 @@ h2 {
 
 #bookingFormContainer {
   animation: fadeIn 0.4s ease;
-}
-
-/* animacion form-contact */
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
 }

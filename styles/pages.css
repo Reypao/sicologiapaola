@@ -5,8 +5,11 @@
 .paola-name {
   font-family: 'Permanent Marker', cursive;
   color: #af802b;
-  /* optional highlight color */
   font-size: 1.4em;
+}
+
+.about-section {
+  background-color: #fbf4f4;
 }
 
 .about-text-box {
@@ -14,7 +17,6 @@
   background: #fbe8e0;
   z-index: 2;
   margin-left: -3rem;
-
 }
 
 .about-text-box p {
@@ -22,51 +24,25 @@
   color: black;
 }
 
-/* Sobre Mi and picture */
-
-.about-section {
-  background-color: #fbf4f4;
-  
-}
-
-.about-paragrah  {
+.about-paragrah {
   font-size: 1.3rem;
   line-height: 1.7;
   color: #090808;
-}
-
-.paola-name {
-  font-size: 2rem;
-}
-
-.about-image img {
-  width: 90%;            /* ✅ shrink the image */
-  max-width: 350px;      /* ✅ sets a size limit */
-  height: auto;
-  border-radius: 6px;
-}
-
-.about-image img:hover {
-  transform: scale(1.03);
-}
-
-.about-photo:hover {
-  transform: scale(1.02);
 }
 
 .about-image {
   position: relative;
 }
 
-.about-accent {
-  position: absolute;
-  bottom: -40px;
-  right: -30px;
-  width: 85%;
-  height: 100%;
-  background-color: var(--hero-cta); /* soft pastel accent */
-  z-index: 0;
-  border-radius: 4px;
+.about-image img {
+  width: 90%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 6px;
+}
+
+.about-image img:hover {
+  transform: scale(1.03);
 }
 
 .about-photo {
@@ -78,11 +54,31 @@
   transition: transform 0.3s ease;
 }
 
+.about-photo:hover {
+  transform: scale(1.02);
+}
+
+.about-accent {
+  position: absolute;
+  bottom: -40px;
+  right: -30px;
+  width: 85%;
+  height: 100%;
+  background-color: var(--hero-cta);
+  z-index: 0;
+  border-radius: 4px;
+}
+
+.paola-name {
+  font-size: 2rem;
+}
+
 .sobre-mi {
   color: #D96E3B;
 }
 
 /* Temas a discutir */
+
 .topics-section {
   background: #fafafa;
   position: relative;
@@ -106,7 +102,7 @@
 
 /*? sesion privada/grupal  */
 
-/* sesiones*/
+/* sesiones */
 
 .sesion-detail {
   background-color: var(--color-beige-fondo);
@@ -114,15 +110,15 @@
   font-size: 1.5em;
 }
 
-/* sesion grupal*/
+/* sesion grupal */
 
- /* HERO full background with opacity overlay */
+/* HERO full background with opacity overlay */
 .hero-grupal {
-  background-image: url('../images/grupalPaoWeb.jpg'); /* ✅images/ folder */
+  background-image: url('../images/grupalPaoWeb.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 50vh; /* taller hero section */
+  min-height: 50vh;
   position: relative;
   color: #fff;
 }
@@ -136,14 +132,14 @@
     rgba(15, 158, 154, 0.7),
     rgba(0, 0, 0, 0.3)
   );
-  opacity: 0.60; /* adjust strength of overlay */
+  opacity: 0.60;
   z-index: 1;
 }
 
 /* Content styling */
 .hero-grupal .hero-content {
   position: relative;
-  z-index: 2; /* places text above overlay */
+  z-index: 2;
   margin: 0 auto;
 }
 
@@ -177,7 +173,6 @@
 
 .podcast-hero-img {
   max-height: 300px;
-  /* Adjust as needed */
   width: 100%;
   display: block;
   object-position: center 30%;
@@ -188,10 +183,10 @@
 /* background form-talleres */
 
 .form-talleres {
-  background: 
+  background:
     linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
     url("images/groupPaoWeb.jpg") center / cover no-repeat;
-  background-attachment: fixed; /* optional: keeps it steady on scroll */
+  background-attachment: fixed;
   padding-top: 3rem;
   padding-bottom: 3rem;
 }

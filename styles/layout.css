@@ -1,0 +1,111 @@
+/* Navegacion y header */
+
+.barra-nav {
+  background-color: var(--color-verde-oliva);
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.nav-link {
+  color: var(--color-dark-red);
+  font-size: 1.5em;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+/* Hero principal */
+
+.hero-container {
+  max-width: 100%;
+  background-color: var(--color-beige-fondo);
+}
+
+.hero-text-container {
+  padding-left: 10em;
+}
+
+.hero-photo {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  background: #e1bcbc;
+}
+
+.hero-photo img,
+.podcast-hero-img {
+  display: block;
+  height: 500px;
+  max-width: 100%;
+  /* Fade from fully visible (right) to transparent (left) */
+  -webkit-mask-image: linear-gradient(to left,
+      rgba(0, 0, 0, 1) 90%,
+      rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-image: linear-gradient(to left,
+      rgba(0, 0, 0, 1) 90%,
+      rgba(0, 0, 0, 0) 100%);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+
+}
+
+.hero-photo::after {
+  /* Degradado encima */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0) 60%, #F4EFE5 100%);
+
+}
+
+/* footer and borders*/
+
+.border-top {
+  background-color: var(--color-verde-oliva);
+  color: #2c2828;
+  /* dark text for contrast */
+}
+
+.footer-container {
+  text-shadow: 2px 2px 2px black;
+}
+
+/* sesiones destacadas*/
+
+/* Gradient background for the feature row */
+.feature-gradient {
+  background: linear-gradient(to right,
+      #e6c3c0 0%,
+      /* coral / reddish on the left */
+      #609b45 50%,
+      /* soft pink in the middle */
+      #6fb077 100%
+      /* light pastel pink on the right */
+    );
+  color: #fff;
+  /* make text white for contrast */
+}
+
+.feature-gradient p,
+.feature-gradient a {
+  color: #fdfcfc !important;
+}
+
+.feature-gradient a.btn {
+  background-color: rgba(114, 119, 14, 0.605);
+  border: none;
+  color: #fff;
+}
+
+.feature-gradient a.btn:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* TO DO add media queries  */

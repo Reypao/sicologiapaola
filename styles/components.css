@@ -1,0 +1,174 @@
+/* Botones globales */
+
+.btn-reserva {
+  background-color: var(--color-dark-red);
+  color: white;
+}
+
+.btn-reserva:hover {
+  background-color: var(--color-durazno);
+  border: 1.5px solid var(--color-dark-red);
+}
+
+.btn-enviar {
+  background-color: var(--color-dark-red);
+  color: white;
+}
+
+/* CTA Button */
+.btn-cta {
+  background-color: var(--color-durazno);
+  border: none;
+  color: white;
+  font-weight: 700;
+  padding: 0.85rem 1.4rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.995);
+}
+
+.btn-cta:hover {
+  background-color: #fa7d4e;
+  transform: translateY(-2px);
+}
+
+/* Iconos sociales */
+
+.social-facebook:hover {
+  color: var(--primary-color);
+}
+
+.social-instagram:hover {
+  color: var(--color-dark-red);
+}
+
+.social-tiktok:hover {
+  color: red;
+}
+
+/* componentes carrusel */
+
+/* Testimonials look & spacing */
+.testimonial-card {
+  position: relative;
+}
+
+.testimonial-card .quote-mark {
+  font-size: 2rem;
+  line-height: 1;
+  vertical-align: baseline;
+  opacity: .35;
+}
+
+/* TestimonialMake indicators subtle and aligned */
+
+#testimonialsCarousel .carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+#testimonialsCarousel .carousel-indicators {
+  bottom: -2rem;
+}
+
+/* card - images*/
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+.bg-pastel-green {
+  background-color: #effaef;
+
+}
+
+/* TRABAJA CON PAOLA*/
+
+/* work with paola */
+.work-with-paola i {
+  font-size: 1.5rem;
+  color: #e26d5a;
+}
+
+.pg-lotus {
+  width: 128px;
+  height: 128px;
+  display: inline-block;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .06));
+}
+
+.pg-subtle {
+  color: #7d7d7d;
+}
+
+.pg-card {
+  background: #fff;
+  border: 1px solid var(--pg-border);
+  border-radius: .5rem;
+}
+
+.pg-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: .5rem;
+}
+
+.pg-board {
+  background: #fbe9e9;
+  border-radius: .5rem;
+  max-width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.pg-col {
+  padding: 1rem;
+  border-right: 1px solid var(--pg-border);
+}
+
+.pg-col:last-child {
+  border-right: none;
+}
+
+.pg-week {
+  text-transform: uppercase;
+  font-size: .76rem;
+  color: #8a8a8a;
+  letter-spacing: .02em;
+}
+
+.pg-day {
+  font-weight: 600;
+  color: #2b2b2b;
+}
+
+.pg-date {
+  color: #909090;
+}
+
+.pg-slot {
+  width: 100%;
+  margin-bottom: .6rem;
+  border: 1px solid var(--pg-border);
+  background: #fff;
+  border-radius: .4rem;
+  padding: .55rem .75rem;
+  font-weight: 500;
+  transition: .15s;
+}
+
+.pg-slot:hover {
+  border-color: var(--pg-brand);
+  box-shadow: 0 0 0 .2rem rgba(154, 208, 97, .15);
+  transform: translateY(-1px);
+}
+
+.pg-powered {
+  color: #9a9a9a;
+  font-size: .85rem;
+}
+

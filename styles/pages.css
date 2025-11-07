@@ -127,11 +127,9 @@
 .hero-grupal .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(15, 158, 154, 0.7),
-    rgba(0, 0, 0, 0.3)
-  );
+  background: linear-gradient(to right,
+      rgba(15, 158, 154, 0.7),
+      rgba(0, 0, 0, 0.3));
   opacity: 0.60;
   z-index: 1;
 }
@@ -194,3 +192,21 @@
 #bookingFormContainer {
   animation: fadeIn 0.4s ease;
 }
+
+.text {
+  color: var(--color-dark-red #a04430);
+}
+
+/* Text shadow for hero titles */
+.font-shadow-strong {
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+}
+
+/* Soft shadow for subtitles */
+.font-shadow-soft {
+    text-shadow: 2px 2px 6px rgba(238, 100, 100, 0.7);
+    font-weight: bold;
+
+}
+
+

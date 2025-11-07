@@ -5,7 +5,7 @@
 .paola-name {
   font-family: 'Permanent Marker', cursive;
   color: #af802b;
-  font-size: 1.4em;
+  font-size: 2em;
 }
 
 .about-section {
@@ -67,10 +67,6 @@
   background-color: var(--hero-cta);
   z-index: 0;
   border-radius: 4px;
-}
-
-.paola-name {
-  font-size: 2rem;
 }
 
 .sobre-mi {
@@ -199,14 +195,29 @@
 
 /* Text shadow for hero titles */
 .font-shadow-strong {
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 /* Soft shadow for subtitles */
 .font-shadow-soft {
-    text-shadow: 2px 2px 6px rgba(238, 100, 100, 0.7);
-    font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(4, 4, 4, 0.7);
+  font-weight: bold;
 
 }
 
+.text-handwrite {
+  font-family: "Bilbo", cursive;
+  font-weight: 600;
+  font-style: normal;
+  text-shadow: 2px 2px 6px rgba(13, 12, 12, 0.7);
 
+}
+
+.talleres-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(108, 156, 103, 0.5));
+  height: 40vh;
+  font-size: 1.5rem;
+}

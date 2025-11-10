@@ -81,44 +81,16 @@
 
     <div class="container">
       <!-- GRID DE HORARIOS -->
-      <section class="pg-board px-3 mt-3">
-        <div class="text-center small text-muted pt-2">
-          ZONA HORARIA: <span class="fw-semibold">Mountain Time (GMT-06:00)</span>
-        </div>
-
-        <div class="row row-cols-1 row-cols-lg-4 g-3 mt-2">
-          <div class="col pg-col">
-            <div class="pg-week">Próxima semana</div>
-            <div class="pg-day">Miércoles</div>
-            <div class="pg-date mb-2">Oct 8</div>
-            <button class="pg-slot btn btn-outline-primary w-100 mb-2">9:00 AM</button>
-            <button class="pg-slot btn btn-outline-primary w-100 mb-2">10:00 AM</button>
-            <button class="pg-slot btn btn-outline-primary w-100 mb-2">11:30 AM</button>
-          </div>
-
-          <div class="col pg-col">
-            <div class="pg-week">En 2 semanas</div>
-            <div class="pg-day">Domingo</div>
-            <div class="pg-date mb-2">Oct 12</div>
-            <button class="pg-slot btn btn-outline-primary w-100 mb-2">8:00 AM</button>
-            <button class="pg-slot btn btn-outline-primary w-100 mb-2">4:00 PM</button>
-          </div>
-
-          <div class="col pg-col">
-            <div class="pg-week">En 3 semanas</div>
-            <div class="pg-day">Miércoles</div>
-            <div class="pg-date mb-2">Oct 15</div>
-            <button class="pg-slot btn btn-outline-primary w-100 mb-2">12:00 PM</button>
-            <button class="pg-slot btn btn-outline-primary w-100 mb-2">1:30 PM</button>
-          </div>
-
-          <div class="col pg-col">
-            <div class="pg-week">En 4 semanas</div>
-            <div class="pg-day">Domingo</div>
-            <div class="pg-date mb-2">Oct 29</div>
-            <button class="pg-slot btn btn-outline-primary w-100 mb-2">7:00 AM</button>
-            <button class="pg-slot btn btn-outline-primary w-100 mb-2">3:00 PM</button>
-          </div>
+      <section class="container my-4">
+        <h5 class="text-center">HORARIOS DISPONIBLES</h5>
+        <div class="table-responsive">
+          <table class="table table-bordered text-center align-middle" id="tablaHorarios">
+            <thead class="table-light">
+              <tr id="tablaFechasHeader"></tr>
+            </thead>
+            <tbody id="tablaHorariosBody">
+            </tbody>
+          </table>
         </div>
       </section>
 

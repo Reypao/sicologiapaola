@@ -1,60 +1,117 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  /* ✅ 1. CONFIGURACIÓN DE HORARIOS Y DÍAS */
+  const agenda = [
+    {
+      dia: "Miércoles",
+      fecha: "Oct 8",
+      horarios: ["9:00 AM", "10:00 AM", "11:30 AM"]
+    },
+    {
+      dia: "Domingo",
+      fecha: "Oct 12",
+      horarios: ["8:00 AM", "4:00 PM"]
+    },
+    {
+      dia: "Miércoles",
+      fecha: "Oct 15",
+      horarios: ["12:00 PM", "1:30 PM"]
+    },
+    {
+      dia: "Domingo",
+      fecha: "Oct 29",
+      horarios: ["7:00 AM", "3:00 PM"]
+    }
+  ];
+
+  /* ✅ 2. REFERENCIAS A LA TABLA */
+  const headerRow = document.getElementById("tablaFechasHeader");
+  const bodyTable = document.getElementById("tablaHorariosBody");
+
+  /* ✅ 3. CREAR HEADERS (días) */
+  headerRow.innerHTML = `<th></th>`; // Columna vacía para horas
+
+  agenda.forEach(col => {
+    headerRow.innerHTML += `
+      <th>
+        <div class="fw-bold">${col.dia}</div>
+        <div class="text-muted small">${col.fecha}</div>
+      </th>`;
+  });
+
+  /* ✅ 4. OBTENER LISTA ÚNICA DE HORARIOS */
+  const todosLosHorarios = [...new Set(agenda.flatMap(col => col.horarios))];
+
+  /* ✅ 5. CREAR FILAS */
+  todosLosHorarios.forEach(hora => {
+    let rowHTML = `<tr><th class="table-light">${hora}</th>`;
+
+    agenda.forEach(col => {
+      if (col.horarios.includes(hora)) {
+        rowHTML += `<td class="horario-cell selectable" data-dia="${col.dia}" data-fecha="${col.fecha}" data-hora="${hora}">
+            ✅ Disponible
+          </td>`;
+      } else {
+        rowHTML += `<td class="table-secondary">—</td>`;
+      }
+    });
+
+    rowHTML += "</tr>";
+    bodyTable.innerHTML += rowHTML;
+  });
+
+  /* ✅ 6. MOSTRAR FORMULARIO AL SELECCIONAR HORARIO */
   const formContainer = document.getElementById("bookingFormContainer");
   const fechaInput = document.getElementById("fecha");
   const horaInput = document.getElementById("hora");
 
-  // Si no existe el contenedor, no hacemos nada
-  if (!formContainer) return;
+  document.querySelectorAll(".selectable").forEach(cell => {
+    cell.addEventListener("click", () => {
+      const dia = cell.dataset.dia;
+      const fecha = cell.dataset.fecha;
+      const hora = cell.dataset.hora;
 
-  // Al hacer click en un horario disponible
-  document.querySelectorAll(".pg-slot").forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      const col = e.target.closest(".pg-col");
-      const dia = col.querySelector(".pg-day").textContent.trim();
-      const fecha = col.querySelector(".pg-date").textContent.trim();
-      const hora = e.target.textContent.trim();
-
-      // Completa los campos del formulario
+      // Rellenar campos
       fechaInput.value = `${dia} ${fecha}`;
       horaInput.value = hora;
 
-      // Muestra el formulario
+      // Mostrar formulario
       formContainer.style.display = "block";
       formContainer.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
 
-  // Envío del formulario con Web3Forms
+  /* ✅ 7. ENVÍO DEL FORMULARIO (igual que antes) */
   const bookingForm = document.getElementById("bookingForm");
-  if (bookingForm) {
-    bookingForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
 
-      const formData = new FormData(bookingForm);
-      const submitBtn = bookingForm.querySelector("button[type='submit']");
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Enviando...";
+  bookingForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-      try {
-        const response = await fetch(bookingForm.action, {
-          method: "POST",
-          body: formData,
-        });
-        const result = await response.json();
+    const formData = new FormData(bookingForm);
+    const submitBtn = bookingForm.querySelector("button[type='submit']");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Enviando...";
 
-        if (response.ok) {
-          alert("✅ ¡Reserva enviada correctamente! Te contactaremos pronto.");
-          bookingForm.reset();
-          formContainer.style.display = "none";
-        } else {
-          alert("❌ Error: " + (result.message || "Intenta nuevamente."));
-        }
-      } catch {
-        alert("⚠️ No se pudo enviar el formulario. Verifica tu conexión.");
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Confirmar Reserva";
+    try {
+      const resp = await fetch(bookingForm.action, {
+        method: "POST",
+        body: formData
+      });
+
+      const result = await resp.json();
+
+      if (resp.ok) {
+        alert("✅ ¡Reserva enviada correctamente!");
+        bookingForm.reset();
+        formContainer.style.display = "none";
+      } else {
+        alert("❌ Error: " + (result.message || "Intenta nuevamente."));
       }
-    });
-  }
+    } catch {
+      alert("⚠️ No se pudo enviar el formulario. Verifica tu conexión.");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Confirmar Reserva";
+    }
+  });
 });

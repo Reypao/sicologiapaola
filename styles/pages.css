@@ -221,3 +221,12 @@
   height: 40vh;
   font-size: 1.5rem;
 }
+
+.taller-item h3 {
+color: var(--color-dark-red);
+}
+
+.btn-reserva {
+  border: none;
+  background-color: var(--color-dark-red);
+}

@@ -29,7 +29,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bilbo&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -48,18 +49,18 @@
                 </a>
                 <div id="mainNav" class="collapse navbar-collapse">
                     <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="sobremi.html">Sobre Mi</a></li>
                         <li class="nav-item"><a class="nav-link" href="podcast.html">Podcast</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="menuPaola"
+                            <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown" id="menuPaola"
                                 role="button" aria-expanded="false">
                                 Trabaja con Paola
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="menuPaola">
                                 <li><a class="dropdown-item" href="sesionprivada.html">Sesion Privada</a></li>
                                 <li><a class="dropdown-item" href="sesiongrupal.html">Session Grupal</a></li>
-                                <li><a class="dropdown-item" href="talleres.html">Talleres</a></li>
+                                <li><a class="dropdown-item active" href="talleres.html">Talleres</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -77,7 +78,7 @@
                 <!-- frase /background -->
                 <p class="mt-3 text-handwrite">
                     Aprende a mirar lo que ya miraste y tratar de ver lo que no viste,
-                    <br> ¿Cuantos regalos te permites descubrir hoy?
+                    <br> ¿Cuantos regalos, te permites descubrir hoy?
                 </p>
             </div>
         </section>
@@ -92,13 +93,13 @@
                 </div>
 
                 <!-- Featured Workshop -->
-                <div class="row align-items-center">
+                <div class="row align-items-center taller-item">
                     <div class="col-lg-6 mb-4 mb-lg-0">
                         <img src="images/tuNinaInterior.jpg" alt="Taller La niña que hay en tu interior"
                             class="img-fluid rounded shadow">
                     </div>
                     <div class="col-lg-6">
-                        <h3 class="fw-bold mb-3" style="color:#e26d5a;">Taller: La niña que hay en tu interior</h3>
+                        <h3 class="fw-bold mb-3">Taller: La niña que hay en tu interior</h3>
                         <p>
                             Este taller te invita a reconectarte con esa parte de ti que aún guarda heridas,
                             sueños y emociones no expresadas. A través de dinámicas terapéuticas, reflexión guiada y
@@ -112,7 +113,7 @@
                             <li><i class="bi bi-check-square-fill text-danger me-2"></i>Incluye material descargable
                             </li>
                         </ul>
-                        <a href="#" class="btn btn-primary px-4 py-2" style="background-color:#e26d5a; border:none;">
+                        <a href="form-talleres.html" class="btn btn-primary px-4 py-2 btn-reserva">
                             Reserva tu lugar
                         </a>
                     </div>
@@ -124,50 +125,80 @@
         <section class="py-5">
             <div class="container">
                 <div class="text-center mb-5">
-                    <h2 class="fw-bold text-success">Próximos Talleres</h2>
+                    <h2 class="fw-bold">Próximos Talleres</h2>
                     <p class="text-muted">Descubre nuevas experiencias de crecimiento y conexión.</p>
                 </div>
 
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="card border-0 shadow-sm h-100">
-                            <img src="images/taller-autoestima.jpg" class="card-img-top"
-                                alt="Taller Autoestima y Confianza">
-                            <div class="card-body">
-                                <h5 class="card-title fw-semibold text-primary">Autoestima y Confianza</h5>
-                                <p class="card-text">Aprende a fortalecer tu amor propio, establecer límites sanos y
-                                    vivir desde la
-                                    seguridad interior.</p>
-                                <a href="#" class="btn btn-outline-primary btn-sm">Más información</a>
-                            </div>
-                        </div>
+                <!-- Próximos talleres con diseño uniforme -->
+                <div class="row align-items-center mb-5 taller-item">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <img src="images/taller-autoestima.jpg" alt="Taller Autoestima y Confianza"
+                            class="img-fluid rounded shadow">
                     </div>
-
-                    <div class="col-md-4">
-                        <div class="card border-0 shadow-sm h-100">
-                            <img src="images/taller-intimidad.jpg" class="card-img-top"
-                                alt="Taller Intimidad Consciente">
-                            <div class="card-body">
-                                <h5 class="card-title fw-semibold text-primary">Intimidad Consciente</h5>
-                                <p class="card-text">Reconecta con tu cuerpo y tu deseo desde un lugar de presencia,
-                                    respeto y libertad.</p>
-                                <a href="#" class="btn btn-outline-primary btn-sm">Más información</a>
-                            </div>
-                        </div>
+                    <div class="col-lg-6">
+                        <h3 class="fw-bold mb-3" >Autoestima y Confianza</h3>
+                        <p>
+                            Aprende a fortalecer tu amor propio, establecer límites sanos
+                            y vivir desde la seguridad interior.
+                        </p>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li><i class="bi bi-check-square-fill text-danger me-2"></i>Duración: 2 horas</li>
+                            <li><i class="bi bi-check-square-fill text-danger me-2"></i>Modalidad: Online o presencial
+                            </li>
+                            <li><i class="bi bi-check-square-fill text-danger me-2"></i>Incluye material descargable
+                            </li>
+                        </ul>
+                        <a href="form-talleres.html" class="btn btn-primary px-4 py-2 btn-reserva">
+                            Reserva tu lugar
+                        </a>
                     </div>
+                </div>
 
-                    <div class="col-md-4">
-                        <div class="card border-0 shadow-sm h-100">
-                            <img src="images/taller-emociones.jpg" class="card-img-top"
-                                alt="Taller Sanar las Emociones">
-                            <div class="card-body">
-                                <h5 class="card-title fw-semibold text-primary">Sanar las Emociones</h5>
-                                <p class="card-text">Un espacio terapéutico para soltar el dolor emocional, sanar
-                                    vínculos y reconectar
-                                    con tu paz interior.</p>
-                                <a href="#" class="btn btn-outline-primary btn-sm">Más información</a>
-                            </div>
-                        </div>
+                <div class="row align-items-center mb-5 taller-item">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <img src="images/taller-intimidad.jpg" alt="Taller Intimidad Consciente"
+                            class="img-fluid rounded shadow">
+                    </div>
+                    <div class="col-lg-6">
+                        <h3 class="fw-bold mb-3">Intimidad Consciente</h3>
+                        <p>
+                            Reconecta con tu cuerpo y tu deseo desde un lugar de presencia,
+                            respeto y libertad.
+                        </p>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li><i class="bi bi-check-square-fill text-danger me-2"></i>Duración: 2 horas</li>
+                            <li><i class="bi bi-check-square-fill text-danger me-2"></i>Modalidad: Online o presencial
+                            </li>
+                            <li><i class="bi bi-check-square-fill text-danger me-2"></i>Incluye material descargable
+                            </li>
+                        </ul>
+                        <a href="form-talleres.html" class="btn btn-primary px-4 py-2 btn-reserva">
+                            Reserva tu lugar
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row align-items-center mb-5 taller-item">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <img src="images/taller-emociones.jpg" alt="Taller Sanar las Emociones"
+                            class="img-fluid rounded shadow">
+                    </div>
+                    <div class="col-lg-6">
+                        <h3 class="fw-bold mb-3">Sanar las Emociones</h3>
+                        <p>
+                            Un espacio terapéutico para soltar el dolor emocional, sanar vínculos
+                            y reconectar con tu paz interior.
+                        </p>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li><i class="bi bi-check-square-fill text-danger me-2"></i>Duración: 2 horas</li>
+                            <li><i class="bi bi-check-square-fill text-danger me-2"></i>Modalidad: Online o presencial
+                            </li>
+                            <li><i class="bi bi-check-square-fill text-danger me-2"></i>Incluye material descargable
+                            </li>
+                        </ul>
+                        <a href="form-talleres.html" class="btn btn-primary px-4 py-2 btn-reserva">
+                            Reserva tu lugar
+                        </a>
                     </div>
                 </div>
             </div>
@@ -185,7 +216,7 @@
                 <div class="d-flex flex-column lh-sm">
                     <span class="fw-bold">CHW - Terapeuta Femenina</span>
                     <span class="small">PAOLA GUZMAN - Psicóloga Social</span>
-                </div>
+                </div> 
             </a>
 
             <!-- Middle: Links -->

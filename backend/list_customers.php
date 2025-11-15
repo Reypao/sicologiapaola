@@ -12,3 +12,6 @@ while ($fila = $resultado->fetch_assoc()) {
 
 header("Content-Type: application/json");
 echo json_encode($customers);
+
+?>
+

@@ -26,7 +26,5 @@ while ($row=$resultado->fetch_assoc()){
           <td>{$row['fecha_registro']}</td>
         </tr>";
 }
-
 echo "</tbody></table>
 ?>
-

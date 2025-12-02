@@ -15,9 +15,9 @@
     <!-- Meta SEO para posicionamiento en motores de busqueda-->
     <meta name="description" content="Sitio oficial de Paola Guzmán, Psicóloga Social. Explora sus talleres, sesiones grupales y podcasts sobre salud emocional y bienestar.">
     <meta name="keywords" content="Psicologia Social, Bienestar, salud mental, talleres, sesiones, Paola Guzmán, Terapia, Autoestima, Ansiedad, Salud mental Femenina">
-    <meta name="author" content="Paola Guzmán"> 
+    <meta name="author" content="Paola Guzmán">
     <meta name="robots" content="index, follow">
-        <!-- Bootstrap 5 -->
+    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Beth+Ellen&display=swap" rel="stylesheet">
@@ -63,14 +63,20 @@
     <!-- creando el nuevo contenido -->
     <main class="py-5">
         <div class="container">
-            <h1 class="fw-bold mb-3" >Administracion</h1>
+            <h1 class="fw-bold mb-3">Administracion</h1>
             <section class="mb-5">
-                <div class="mb-2 d-flex justify-content-between align-items-center">
+
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
                     <h3 class="fw-bold">Clientes</h3>
-                    <div class="table-responsive border rounded p-3 shadow-sm bg-white" >
-                        <?php include 'list_customers.php'; ?>
-                    </div>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAgregarCliente">
+                        + Agregar cliente
+                    </button>
                 </div>
+                <div class="table-responsive border rounded p-3 shadow-sm bg-white">
+                    <?php include 'backend/list_customers.php'; ?>
+                </div>
+
             </section>
         </div>
     </main>
@@ -119,8 +125,62 @@
 
         </div>
     </footer>
+    <!--  -->
+    <div class="modal fade" id="modalAgregarCliente" tabindex="-1" aria-labelledby="modalAgregarClinteLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalAgregarClienteLabel">Agregar Cliente</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="Modal"></button>
+                </div>
 
+                <div class="modal-body">
+                    <form action="backend/add_customer.php" method="post">
+                        <div class="mb-3">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" name="nombre" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Telefono</label>
+                            <input type="tel" name="telefono" class="form-control">
+                        </div>
+                        <div class="text-end">
+                            <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-primary" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Toast de confirmación -->
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
+        <div id="toastClienteOk" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    ✔ Cliente agregado con éxito.
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
 
+    <?php if (isset($_GET['ok'])): ?>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var toastElement = document.getElementById('toastClienteOk');
+                var toast = new bootstrap.Toast(toastElement, {
+                    delay: 2500
+                });
+                toast.show();
+            });
+        </script>
+    <?php endif; ?>
+A
     <!-- script the bootstrp -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

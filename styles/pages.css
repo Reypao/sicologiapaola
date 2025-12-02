@@ -230,3 +230,74 @@ color: var(--color-dark-red);
   border: none;
   background-color: var(--color-dark-red);
 }
+
+/* colores to adminnistracion.php page */
+
+/* Fondo con GRADIENT suave del área principal */
+.admin-bg {
+    background: linear-gradient(
+        135deg,
+        #fae4d9 0%,   /* crema durazno */
+        #f9d4c6 40%, /* durazno rosado */
+        #f5c3b1 100% /* rosado cálido */
+    );
+    min-height: 100vh;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* Contenedor de la tabla */
+.table-box {
+    background: #ffffffcc;
+    padding: 1.5rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    backdrop-filter: blur(4px);
+}
+
+/* FORMULARIO con gradient suave */
+.modal-content {
+    background: linear-gradient(
+        135deg,
+        #fff8f5 0%,
+        #ffe9e2 60%,
+        #ffd9ce 100%
+    ) !important;
+    border-radius: 16px !important;
+    border: 1px solid #f3c7b6 !important;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+    background: linear-gradient(
+        135deg,
+        #f3c7b6,
+        #e7a693
+    );
+    color: #4a2b2b;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom: 1px solid #e0a393;
+}
+
+.modal-body {
+    background: transparent;
+}
+
+/* Inputs */
+.modal-content .form-control {
+    border-radius: 12px;
+    border: 1px solid #e5b8a2;
+    background-color: #fffefc;
+}
+
+/* Botón */
+.modal-content .btn-primary {
+    background-color: #c45a3f;
+    border: none;
+    font-weight: bold;
+}
+
+.modal-content .btn-primary:hover {
+    background-color: #a64832;
+}

@@ -63,10 +63,8 @@
     <!-- creando el nuevo contenido -->
     <main class="py-5">
         <div class="container">
-            <h1 class="fw-bold mb-3">Administracion</h1>
-            <section class="mb-5">
-
-
+            <h1 class="fw-bold mb-3 text-center admin-title">Administracion</h1>
+            <section class="mb-5 section-customer">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h3 class="fw-bold">Clientes</h3>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAgregarCliente">
@@ -125,7 +123,7 @@
 
         </div>
     </footer>
-    <!--  -->
+    <!--modal agregar Cliente  -->
     <div class="modal fade" id="modalAgregarCliente" tabindex="-1" aria-labelledby="modalAgregarClinteLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -149,14 +147,49 @@
                             <input type="tel" name="telefono" class="form-control">
                         </div>
                         <div class="text-end">
-                            <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button class="btn btn-primary" type="submit">Submit</button>
+                            <button class="btn btn-secondary" type="button"  data-bs-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-primary" type="submit">Guardar</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
+        <!--modal editar Cliente  -->
+    <div class="modal fade" id="modaleditarCliente" tabindex="-1" aria-labelledby="modaleditarClinteLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modaleditarClienteLabel">Editar Cliente</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="Modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="backend/add_customer.php" method="post">
+                        <input type="hidden" name="id-customer" id="edit-id">
+                        <div class="mb-3">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" name="nombre" id="edit-nombre" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" name="email" id="edit-email"  class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Telefono</label>
+                            <input type="tel" name="telefono" id="edit-elefono"  class="form-control">
+                        </div>
+                        <div class="text-end">
+                            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-primary" type="submit">Guardar Cambio</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Toast de confirmación -->
     <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
         <div id="toastClienteOk" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">

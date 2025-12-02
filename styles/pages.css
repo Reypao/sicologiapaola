@@ -301,3 +301,14 @@ color: var(--color-dark-red);
 .modal-content .btn-primary:hover {
     background-color: #a64832;
 }
+
+/*? administracion  */
+
+.admin-title {
+  color: var(--color-dark-red);
+}
+
+.section-customer {
+background-color: var(--color-beige-fondo);
+padding: 2em;
+}

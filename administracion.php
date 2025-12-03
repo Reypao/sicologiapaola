@@ -67,7 +67,7 @@
             <section class="mb-5 section-customer">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h3 class="fw-bold">Clientes</h3>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAgregarCliente">
+                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAgregarCliente">
                         + Agregar cliente
                     </button>
                 </div>
@@ -105,17 +105,17 @@
             <!-- Right: Social icons -->
             <div class="d-flex gap-2">
                 <a href="#"
-                    class="btn btn-outline-secondary btn-md rounded-circle d-flex align-items-center justify-content-center social-facebook"
+                    class="btn btn-outline-warning btn-md rounded-circle d-flex align-items-center justify-content-center social-facebook"
                     style="width:50px; height:50px;">
                     <i class="bi bi-facebook fs-1"></i>
                 </a>
                 <a href="#"
-                    class="btn btn-outline-secondary btn-md rounded-circle d-flex align-items-center justify-content-center social-instagram"
+                    class="btn btn-outline-warning btn-md rounded-circle d-flex align-items-center justify-content-center social-instagram"
                     style="width:50px; height:50px;">
                     <i class="bi bi-instagram fs-1"></i>
                 </a>
                 <a href="#"
-                    class="btn btn-outline-secondary btn-md rounded-circle d-flex align-items-center justify-content-center social-instagram"
+                    class="btn btn-outline-warning btn-md rounded-circle d-flex align-items-center justify-content-center social-instagram"
                     style="width:50px; height:50px;">
                     <i class="bi bi-tiktok fs-1"></i>
                 </a>

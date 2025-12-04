@@ -25,7 +25,7 @@ while ($row = $resultado->fetch_assoc()) {
           <td>{$row['email']}</td>
           <td>{$row['telefono']}</td>
           <td>{$row['fecha_registro']}</td>
-          <td>
+          <td class='text-center'>
           <button 
               class='btn btn-sm btn-outline-success btn-editar'
               data-id='{$row['id_customer']}'
@@ -36,7 +36,11 @@ while ($row = $resultado->fetch_assoc()) {
               data-bs-target='#modalEditarCliente'>
               <i class='bi bi-pencil-square'></i>
           </button>
-            
+            <form action='backend/delete_customer.php' method='post' class='d-inline' onsubmit=\"return confirm('Confirma que deseas Eliminar cliente?');\">
+            <button>
+            <i class='bi bi-x-lg'></i>
+            </button>
+            </form>
           </td>
         </tr>";
 }

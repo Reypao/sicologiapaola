@@ -23,6 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Beth+Ellen&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" type="image/jpg" href="images/PsicologiaPao-icon.jpg">
+    <script src="scripts/edit-customer.js" defer></script>
 </head>
 
 <body>
@@ -129,7 +130,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalAgregarClienteLabel">Agregar Cliente</h5>
-                    <button class="btn-close" type="button" data-bs-dismiss="Modal"></button>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
                 </div>
 
                 <div class="modal-body">
@@ -147,7 +148,7 @@
                             <input type="tel" name="telefono" class="form-control">
                         </div>
                         <div class="text-end">
-                            <button class="btn btn-secondary" type="button"  data-bs-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
                             <button class="btn btn-primary" type="submit">Guardar</button>
                         </div>
                     </form>
@@ -156,13 +157,13 @@
         </div>
     </div>
 
-        <!--modal editar Cliente  -->
-    <div class="modal fade" id="modaleditarCliente" tabindex="-1" aria-labelledby="modaleditarClinteLabel" aria-hidden="true">
+    <!--modal editar Cliente  -->
+    <div class="modal fade" id="modalEditarCliente" tabindex="-1" aria-labelledby="modalEditarClinteLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modaleditarClienteLabel">Editar Cliente</h5>
-                    <button class="btn-close" type="button" data-bs-dismiss="Modal"></button>
+                    <h5 class="modal-title" id="modalEditarClienteLabel">Editar Cliente</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
                 </div>
 
                 <div class="modal-body">
@@ -174,11 +175,11 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Email</label>
-                            <input type="email" name="email" id="edit-email"  class="form-control" required>
+                            <input type="email" name="email" id="edit-email" class="form-control" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Telefono</label>
-                            <input type="tel" name="telefono" id="edit-elefono"  class="form-control">
+                            <input type="tel" name="telefono" id="edit-telefono" class="form-control">
                         </div>
                         <div class="text-end">
                             <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
@@ -190,7 +191,7 @@
         </div>
     </div>
 
-    <!-- Toast de confirmación -->
+    <!-- Toast de confirmación agregar clientes -->
     <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
         <div id="toastClienteOk" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
@@ -213,7 +214,31 @@
             });
         </script>
     <?php endif; ?>
-A
+
+    <!-- Toast de edicion -->
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
+        <div id="toastClienteEditado" class="toast align-items-center text-white bg-warning border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    ✔ Cliente editado con éxito.
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
+
+    <?php if (isset($_GET['updated'])): ?>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var toastElement = document.getElementById('toastClienteEditado');
+                var toast = new bootstrap.Toast(toastElement, {
+                    delay: 2500
+                });
+                toast.show();
+            });
+        </script>
+    <?php endif; ?>
+
     <!-- script the bootstrp -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

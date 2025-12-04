@@ -27,7 +27,7 @@ while ($row = $resultado->fetch_assoc()) {
           <td>{$row['fecha_registro']}</td>
           <td>
           <button 
-              class='btn btn-sm btn-outline-primary btn-editar'
+              class='btn btn-sm btn-outline-success btn-editar'
               data-id='{$row['id_customer']}'
               data-nombre='{$row['nombre']}'
               data-email='{$row['email']}'

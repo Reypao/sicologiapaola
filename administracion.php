@@ -166,8 +166,8 @@
                 </div>
 
                 <div class="modal-body">
-                    <form action="backend/add_customer.php" method="post">
-                        <input type="hidden" name="id-customer" id="edit-id">
+                    <form action="backend/update_customer.php" method="post">
+                        <input type="hidden" name="id_customer" id="edit-id">
                         <div class="mb-3">
                             <label class="form-label">Nombre</label>
                             <input type="text" name="nombre" id="edit-nombre" class="form-control" required>

@@ -239,9 +239,9 @@
         </script>
     <?php endif; ?>
 
-        <!-- Toast de eliminacion -->
+    <!-- Toast de eliminacion -->
     <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
-        <div id="toastClienteEliminado" class="toast align-items-center text-white bg-warning border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div id="toastClienteEliminado" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
                 <div class="toast-body">
                     ✔ Cliente eliminado con éxito.
@@ -251,12 +251,12 @@
         </div>
     </div>
 
-   <?php if (isset($_GET['deleted']) && $_GET['deleted'] == 1): ?>
+    <?php if (isset($_GET['deleted']) && $_GET['deleted'] == 1): ?>
         <script>
             document.addEventListener("DOMContentLoaded", function() {
                 var toastElement = document.getElementById('toastClienteEliminado');
                 var toast = new bootstrap.Toast(toastElement, {
-                    delay: 2500
+                    delay: 3500
                 });
                 toast.show();
             });
@@ -264,24 +264,24 @@
     <?php endif; ?>
 
 
-                    <!-- Toast de error -->
+    <!-- Toast de error -->
     <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
         <div id="toastErrorFK" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
                 <div class="toast-body">
-                    ✔ No se puede eliminar Cliente porque tiene secciones asociadas.
+                    ✔ No se puede eliminar Cliente porque tiene sesiones asociadas.
                 </div>
                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
             </div>
         </div>
     </div>
 
-   <?php if (isset($_GET['error']) && $_GET['error'] ==='foreignkey'): ?>
+    <?php if (isset($_GET['error']) && $_GET['error'] === 'foreignkey'): ?>
         <script>
             document.addEventListener("DOMContentLoaded", function() {
                 var toastElement = document.getElementById('toastErrorFK');
                 var toast = new bootstrap.Toast(toastElement, {
-                    delay: 2500
+                    delay: 3500
                 });
                 toast.show();
             });

@@ -239,6 +239,55 @@
         </script>
     <?php endif; ?>
 
+        <!-- Toast de eliminacion -->
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
+        <div id="toastClienteEliminado" class="toast align-items-center text-white bg-warning border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    ✔ Cliente eliminado con éxito.
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
+
+   <?php if (isset($_GET['deleted']) && $_GET['deleted'] == 1): ?>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var toastElement = document.getElementById('toastClienteEliminado');
+                var toast = new bootstrap.Toast(toastElement, {
+                    delay: 2500
+                });
+                toast.show();
+            });
+        </script>
+    <?php endif; ?>
+
+
+                    <!-- Toast de error -->
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
+        <div id="toastErrorFK" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    ✔ No se puede eliminar Cliente porque tiene secciones asociadas.
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
+
+   <?php if (isset($_GET['error']) && $_GET['error'] ==='foreignkey'): ?>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var toastElement = document.getElementById('toastErrorFK');
+                var toast = new bootstrap.Toast(toastElement, {
+                    delay: 2500
+                });
+                toast.show();
+            });
+        </script>
+    <?php endif; ?>
+
     <!-- script the bootstrp -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

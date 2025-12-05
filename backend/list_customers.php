@@ -37,8 +37,9 @@ while ($row = $resultado->fetch_assoc()) {
               <i class='bi bi-pencil-square'></i>
           </button>
             <form action='backend/delete_customer.php' method='post' class='d-inline' onsubmit=\"return confirm('Confirma que deseas Eliminar cliente?');\">
-            <button>
-            <i class='bi bi-x-lg'></i>
+            <input type='hidden' name='id_customer' value='{$row['id_customer']}'>
+            <button type='submit' class='btn btn-sm btn-outline-danger'>
+            <i class='bi bi-trash'></i>
             </button>
             </form>
           </td>

@@ -26,6 +26,9 @@ while ($row = $resultado->fetch_assoc()) {
           <td>{$row['telefono']}</td>
           <td>{$row['fecha_registro']}</td>
           <td class='text-center'>
+
+<!--botones-->
+
           <button 
               class='btn btn-sm btn-outline-success btn-editar'
               data-id='{$row['id_customer']}'
@@ -42,7 +45,13 @@ while ($row = $resultado->fetch_assoc()) {
             <i class='bi bi-trash'></i>
             </button>
             </form>
+
+          <a href='ver_reservas.php?id_customer={$row['id_customer']}' class='btn btn-sm btn-outline-info btn-reservas'>
+          <i class='bi bi-journal-text'></i>
+          </a>
+
           </td>
         </tr>";
 }
 echo "</tbody></table>";
+

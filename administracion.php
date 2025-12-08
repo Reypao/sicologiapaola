@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" type="image/jpg" href="images/PsicologiaPao-icon.jpg">
     <script src="scripts/edit-customer.js" defer></script>
+    <script src="scripts/ver_reservas.js" defer></script>
 </head>
 
 <body>
@@ -190,6 +191,26 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal Reservas -->
+    <div class="modal fade" id="modalReservas" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Reservas del cliente</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body" id="reservas-content">
+                    <!-- Aquí se cargará el contenido dinámicamente -->
+                    <div class="text-center py-4">
+                        <div class="spinner-border text-primary"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Toast de confirmación agregar clientes -->
     <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">

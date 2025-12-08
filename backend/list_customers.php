@@ -46,9 +46,12 @@ while ($row = $resultado->fetch_assoc()) {
             </button>
             </form>
 
-          <a href='ver_reservas.php?id_customer={$row['id_customer']}' class='btn btn-sm btn-outline-info btn-reservas'>
-          <i class='bi bi-journal-text'></i>
-          </a>
+          <button 
+            type='button'
+            class='btn btn-sm btn-outline-info btn-reservas'
+            data-id="<?= $row['id_customer'] ?>">
+            <i class='bi bi-journal-text'></i>
+          </button>
 
           </td>
         </tr>";

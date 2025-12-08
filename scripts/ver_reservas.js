@@ -4,11 +4,11 @@ document.addEventListener("click", function (e) {
         const id = e.target.closest(".btn-reservas").dataset.id;
 
         const modal = new bootstrap.Modal(document.getElementById("modalReservas"));
-        document.getElementById("reservas-content").innerHTML = 
+        document.getElementById("reservas-content").innerHTML = `
             <div class="text-center py-4">
                 <div class="spinner-border text-primary"></div>
-            </div>
-        ;
+            </div>`;
+            
         modal.show();
 
         // AJAX

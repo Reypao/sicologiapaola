@@ -264,7 +264,7 @@
     <?php endif; ?>
 
 
-    <!-- Toast de error -->
+    <!-- Toast de error e-->
     <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
         <div id="toastErrorFK" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">

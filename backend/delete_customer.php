@@ -24,6 +24,6 @@ try {
     }
 
     // Otro tipo de error
-    header("Location: ../administracion.php?error=1");
+    header("Location: ../administracion.php?error=foreignkey");
     exit;
 }

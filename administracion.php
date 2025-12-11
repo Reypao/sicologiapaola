@@ -64,8 +64,9 @@
     </header>
     <!-- creando el nuevo contenido -->
     <main class="py-5">
-        <div class="container">
+        <div class="container administracion-container">
             <h1 class="fw-bold mb-3 text-center admin-title">Administracion</h1>
+            <!-- tabla de clientes -->
             <section class="mb-5 section-customer">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h3 class="fw-bold">Clientes</h3>
@@ -75,6 +76,16 @@
                 </div>
                 <div class="table-responsive border rounded p-3 shadow-sm bg-white">
                     <?php include 'backend/list_customers.php'; ?>
+                </div>
+
+            </section>
+            <!-- tabla de sesiones privadas -->
+            <section class="mb-5 section-private">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h3 class="fw-bold">Sesiones Privadas</h3>
+                </div>
+                <div class="table-responsive border rounded p-3 shadow-sm bg-white">
+                    <?php include 'backend/list_private_sessions.php'; ?>
                 </div>
 
             </section>
@@ -285,7 +296,7 @@
     <?php endif; ?>
 
 
-    <!-- Toast de error e-->
+    <!-- Toast de error -->
     <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
         <div id="toastErrorFK" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">

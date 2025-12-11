@@ -308,7 +308,11 @@ color: var(--color-dark-red);
   color: var(--color-dark-red);
 }
 
-.section-customer {
+main {
+  background-color: rgb(226, 248, 226);
+}
+
+.section-customer, .section-private {
 background-color: var(--color-beige-fondo);
 padding: 2em;
 }

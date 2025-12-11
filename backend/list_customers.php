@@ -19,7 +19,7 @@ $resultado = $conn->query($sql);
   <tbody>
 
     <?php while ($row = $resultado->fetch_assoc()): ?>
-      <tr>
+      <tr style="cursor: pointer;">
         <td><?= $row['id_customer'] ?></td>
         <td><?= htmlspecialchars($row['nombre']) ?></td>
         <td><?= htmlspecialchars($row['email']) ?></td>

@@ -197,7 +197,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Reservas del cliente</h5>
+                    <h5 class="modal-title">Reservas de <span id="nombre-cliente" class="fw-bold"></span></h5>
                     <button class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
 

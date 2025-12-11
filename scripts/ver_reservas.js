@@ -2,6 +2,7 @@ document.addEventListener("click", function (e) {
     if (e.target.closest(".btn-reservas")) {
 
         const id = e.target.closest(".btn-reservas").dataset.id;
+        const nombre = e.target.closest(".btn-reservas").dataset.nombre;
 
         const modal = new bootstrap.Modal(document.getElementById("modalReservas"));
         document.getElementById("reservas-content").innerHTML = `
@@ -19,6 +20,7 @@ document.addEventListener("click", function (e) {
         })
         .then(res => res.text())
         .then(html => {
+            document.getElementById("nombre-cliente").textContent=nombre;
             document.getElementById("reservas-content").innerHTML = html;
         })
         .catch(err => {

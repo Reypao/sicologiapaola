@@ -49,7 +49,7 @@ while ($row = $resultado->fetch_assoc()) {
           <button 
             type='button'
             class='btn btn-sm btn-outline-info btn-reservas'
-            data-id="<?= $row['id_customer'] ?>">
+            data-id="<?= $row['id_customer']?>">
             <i class='bi bi-journal-text'></i>
           </button>
 

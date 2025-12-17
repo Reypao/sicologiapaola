@@ -25,6 +25,7 @@
     <link rel="icon" type="image/jpg" href="images/PsicologiaPao-icon.jpg">
     <script src="scripts/edit-customer.js" defer></script>
     <script src="scripts/ver_reservas.js" defer></script>
+    <script src="scripts/edit-sesionprivada.js" defer></script>
 </head>
 
 <body>
@@ -192,6 +193,53 @@
                         <div class="mb-3">
                             <label class="form-label">Telefono</label>
                             <input type="tel" name="telefono" id="edit-telefono" class="form-control">
+                        </div>
+                        <div class="text-end">
+                            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-primary" type="submit">Guardar Cambio</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal editar sesion privada -->
+
+    <div class="modal fade" id="modalEditarSesion" tabindex="-1" aria-labelledby="modalEditarSesionLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEditarSesionLabel">Editar Sesion Privada</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="backend/update_sesionprivate.php" method="post">
+                        <input type="hidden" name="id_sesion" id="sesion-id">
+                        <div class="mb-3">
+                            <label class="form-label">Cliente</label>
+                            <input type="text" name="nombre" id="sesion-cliente" class="form-control" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Fecha</label>
+                            <input type="date" name="fecha" id="sesion-fecha" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Hora</label>
+                            <input type="time" name="hora" id="sesion-hora" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Estado</label>
+                            <select name="estado" id="sesion_estado" class="form-select">
+                                <option value="pendiente">Pendiente</option>
+                                <option value="confirmada">Confirmada</option>
+                                <option value="cancelada">Cancelada</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Comentario</label>
+                            <textarea name="comentario" id="sesion-comentario" class="form-control" rows="3"></textarea>
                         </div>
                         <div class="text-end">
                             <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>

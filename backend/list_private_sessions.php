@@ -33,7 +33,13 @@ $resultado = $conn->query($sql);
         <?php if ($resultado->num_rows > 0): ?>
             <?php while ($row = $resultado->fetch_assoc()): ?>
 
-                <tr>
+                <tr class="fila-sesion"
+                    data-id="<?= $row['id_sesion'] ?>"
+                    data-cliente="<?= htmlspecialchars($row['cliente']) ?>"
+                    data-fecha="<?= $row['fecha'] ?>"
+                    data-hora="<?= $row['hora'] ?>"
+                    data-estado="<?= $row['estado'] ?>"
+                    data-comentario="<?= htmlspecialchars($row['comentario']) ?>">
                     <td><?= $row['id_sesion'] ?></td>
                     <td><?= htmlspecialchars($row['cliente']) ?></td>
                     <td><?= $row['fecha'] ?></td>

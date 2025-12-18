@@ -29,6 +29,7 @@
 </head>
 
 <body>
+    <?php require 'backend/list_customers.php' ?>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light border-bottom sticky-top barra-nav">
             <div class="container-fluid">
@@ -84,6 +85,9 @@
             <section class="mb-5 section-private">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h3 class="fw-bold">Sesiones Privadas</h3>
+                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAgregarSesionPrivada">
+                        + Agregar Sesion Privada
+                    </button>
                 </div>
                 <div class="table-responsive border rounded p-3 shadow-sm bg-white">
                     <?php include 'backend/list_private_sessions.php'; ?>
@@ -270,6 +274,59 @@
         </div>
     </div>
 
+    <!--modal agregar sesion privada  12/18/2025-->
+    <div class="modal fade" id="modalAgregarSesionPrivada" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalAgregarSesionPrivada">Agregar Sesion Privada</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="backend/add_sesionprivate.php" method="post">
+                        <div class="mb-3">
+                            <label class="form-label">Cliente</label>
+
+                            <!--muestra agregar sesion privada de un cliente que ya existe en la base de datos 12/18/2025-->
+                            <select name="id_customer" class="form-select" required>
+                                <?php while ($c = $resultadoClientes->fetch_assoc()): ?>
+                                    <option value="<?= $c['id_customer'] ?>">
+                                        <?= htmlspecialchars($c['nombre']) ?>
+                                    </option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Fecha</label>
+                            <input type="date" name="fecha" id="add_fecha_ps" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Hora</label>
+                            <input type="time" name="hora" id="add_hora_ps" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Estado</label>
+                            <select name="estado" id="sesion_estado" class="form-select">
+                                <option value="pendiente">Pendiente</option>
+                                <option value="confirmada">Confirmada</option>
+                                <option value="cancelada">Cancelada</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Comentario</label>
+                            <textarea name="comentario" id="sesion-comentario" class="form-control" rows="3"></textarea>
+                        </div>
+
+                        <div class="text-end">
+                            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-primary" type="submit">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Toast de confirmación agregar clientes -->
     <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">

@@ -317,6 +317,15 @@ background-color: var(--color-beige-fondo);
 padding: 2em;
 }
 
+/* pointer on the sesion privada */
+
+.fila-sesion {
+  cursor: pointer;
+}
+.fila-sesion:hover {
+  background-color: #f8f9fa;
+}
+
 /* Override Bootstrap table striped color */
 .table-striped > tbody > tr:nth-of-type(odd) > * {
   background-color: #e7eedd; /* light blue */

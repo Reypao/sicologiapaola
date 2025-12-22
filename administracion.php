@@ -1,3 +1,9 @@
+<?php
+require 'backend/db.php';
+
+$sqlClientes = "SELECT id_customer, nombre FROM customers ORDER BY nombre";
+$resultadoClientes = $conn->query($sqlClientes);
+?>
 <!DOCTYPE html>
 <html lang="en">
 

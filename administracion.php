@@ -35,7 +35,6 @@ $resultadoClientes = $conn->query($sqlClientes);
 </head>
 
 <body>
-    <?php require 'backend/list_customers.php' ?>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light border-bottom sticky-top barra-nav">
             <div class="container-fluid">

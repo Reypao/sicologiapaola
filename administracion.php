@@ -3,6 +3,11 @@ require 'backend/db.php';
 
 $sqlClientes = "SELECT id_customer, nombre FROM customers ORDER BY nombre";
 $resultadoClientes = $conn->query($sqlClientes);
+$clientes = [];
+while ($c = $resultadoClientes->fetch_assoc()) {
+    $clientes[] = $c;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -96,10 +101,10 @@ $resultadoClientes = $conn->query($sqlClientes);
                 </div>
                 <div class="table-responsive border rounded p-3 shadow-sm bg-white">
                     <?php include 'backend/list_private_sessions.php'; ?>
-                </div>    
+                </div>
             </section>
 
-             <!-- tabla de sesiones grupales -->
+            <!-- tabla de sesiones grupales -->
             <section class="mb-5 section-group">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h3 class="fw-bold">Sesion Grupal</h3>
@@ -345,107 +350,170 @@ $resultadoClientes = $conn->query($sqlClientes);
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Toast de confirmación agregar clientes -->
-    <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
-        <div id="toastClienteOk" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="d-flex">
-                <div class="toast-body">
-                    ✔ Cliente agregado con éxito.
+        <!--modal agregar sesion grupal  12/24/2025-->
+        <div class="modal fade" id="modalAgregarSesionGrupal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalAgregarSesionGrupal">Agregar Sesion Grupal</h5>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form action="backend/add_sesiongrupal.php" method="post">
+                            <div class="mb-3">
+                                <label class="form-label">Titulo</label>
+                                <input type="text" name="group-titulo" class="form-control" required>
+                                <!--muestra crear sesion grupal  12/24/2025-->
+
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Descripcion</label>
+                                <textarea name="group-descripcion" class="form-control" rows="3">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Fecha</label>
+                                <input type="date" name="group-fecha"  class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Hora</label>
+                                <input type="time" name="group-hora" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Modalidad</label>
+                                <select name="group-modalidad" class="form-select">
+                                    <option value="online" selected>Online</option>
+                                    <option value="presencial">Presencial</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Lugar</label>
+                                <input type="text" name="group-lugar" class="form-control" placeholder="(opcional)"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Cupo</label>
+                                <input type="number" name="group-cupo" min="1" max="10" value="10" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Estado</label>
+                                <select name="group-estado"  class="form-select">
+                                    <option value="activa" selected>Activa</option>
+                                    <option value="completa">Completa</option>
+                                    <option value="finalizado">Finalizado</option>
+                                </select>
+                            </div>
+
+                            <div class="text-end">
+                                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
+                                <button class="btn btn-primary" type="submit">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+
+        </div>
+
+        <!-- Toast de confirmación agregar clientes -->
+        <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
+            <div id="toastClienteOk" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        ✔ Cliente agregado con éxito.
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <?php if (isset($_GET['ok'])): ?>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                var toastElement = document.getElementById('toastClienteOk');
-                var toast = new bootstrap.Toast(toastElement, {
-                    delay: 2500
+        <?php if (isset($_GET['ok'])): ?>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    var toastElement = document.getElementById('toastClienteOk');
+                    var toast = new bootstrap.Toast(toastElement, {
+                        delay: 2500
+                    });
+                    toast.show();
                 });
-                toast.show();
-            });
-        </script>
-    <?php endif; ?>
+            </script>
+        <?php endif; ?>
 
-    <!-- Toast de edicion -->
-    <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
-        <div id="toastClienteEditado" class="toast align-items-center text-white bg-warning border-0" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="d-flex">
-                <div class="toast-body">
-                    ✔ Cliente editado con éxito.
+        <!-- Toast de edicion -->
+        <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
+            <div id="toastClienteEditado" class="toast align-items-center text-white bg-warning border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        ✔ Cliente editado con éxito.
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
                 </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
             </div>
         </div>
-    </div>
 
-    <?php if (isset($_GET['updated'])): ?>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                var toastElement = document.getElementById('toastClienteEditado');
-                var toast = new bootstrap.Toast(toastElement, {
-                    delay: 2500
+        <?php if (isset($_GET['updated'])): ?>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    var toastElement = document.getElementById('toastClienteEditado');
+                    var toast = new bootstrap.Toast(toastElement, {
+                        delay: 2500
+                    });
+                    toast.show();
                 });
-                toast.show();
-            });
-        </script>
-    <?php endif; ?>
+            </script>
+        <?php endif; ?>
 
-    <!-- Toast de eliminacion -->
-    <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
-        <div id="toastClienteEliminado" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="d-flex">
-                <div class="toast-body">
-                    ✔ Cliente eliminado con éxito.
+        <!-- Toast de eliminacion -->
+        <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
+            <div id="toastClienteEliminado" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        ✔ Cliente eliminado con éxito.
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
                 </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
             </div>
         </div>
-    </div>
 
-    <?php if (isset($_GET['deleted']) && $_GET['deleted'] == 1): ?>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                var toastElement = document.getElementById('toastClienteEliminado');
-                var toast = new bootstrap.Toast(toastElement, {
-                    delay: 3500
+        <?php if (isset($_GET['deleted']) && $_GET['deleted'] == 1): ?>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    var toastElement = document.getElementById('toastClienteEliminado');
+                    var toast = new bootstrap.Toast(toastElement, {
+                        delay: 3500
+                    });
+                    toast.show();
                 });
-                toast.show();
-            });
-        </script>
-    <?php endif; ?>
+            </script>
+        <?php endif; ?>
 
 
-    <!-- Toast de error -->
-    <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
-        <div id="toastErrorFK" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="d-flex">
-                <div class="toast-body">
-                    ✔ No se puede eliminar Cliente porque tiene sesiones asociadas.
+        <!-- Toast de error -->
+        <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
+            <div id="toastErrorFK" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        ✔ No se puede eliminar Cliente porque tiene sesiones asociadas.
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
                 </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
             </div>
         </div>
-    </div>
 
-    <?php if (isset($_GET['error']) && $_GET['error'] === 'foreignkey'): ?>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                var toastElement = document.getElementById('toastErrorFK');
-                var toast = new bootstrap.Toast(toastElement, {
-                    delay: 3500
+        <?php if (isset($_GET['error']) && $_GET['error'] === 'foreignkey'): ?>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    var toastElement = document.getElementById('toastErrorFK');
+                    var toast = new bootstrap.Toast(toastElement, {
+                        delay: 3500
+                    });
+                    toast.show();
                 });
-                toast.show();
-            });
-        </script>
-    <?php endif; ?>
+            </script>
+        <?php endif; ?>
 
-    <!-- script the bootstrp -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- script the bootstrp -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

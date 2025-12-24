@@ -96,9 +96,23 @@ $resultadoClientes = $conn->query($sqlClientes);
                 </div>
                 <div class="table-responsive border rounded p-3 shadow-sm bg-white">
                     <?php include 'backend/list_private_sessions.php'; ?>
+                </div>    
+            </section>
+
+             <!-- tabla de sesiones grupales -->
+            <section class="mb-5 section-group">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h3 class="fw-bold">Sesion Grupal</h3>
+                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAgregarSesionGrupal">
+                        + Agregar Sesion Grupal
+                    </button>
+                </div>
+                <div class="table-responsive border rounded p-3 shadow-sm bg-white">
+                    <?php include 'backend/list_group_sessions.php'; ?>
                 </div>
 
             </section>
+
         </div>
     </main>
     <footer class="border-top py-3 footer'bg">

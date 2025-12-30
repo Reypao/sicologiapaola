@@ -3,3 +3,128 @@
 @import url("components.css");
 @import url("pages.css");
 
+/* ==============================
+   🔹 OPTIMIZACIÓN RESPONSIVA 🔹
+   Ajustes para móviles y tabletas
+   ============================== */
+
+/* ---- Móviles pequeños (hasta 576px) ---- */
+@media (max-width: 576px) {
+
+  /* Ajustar tamaño de texto */
+  h1, h2, h3 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  p, li {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Centrar contenido en secciones principales */
+  .hero-text-container,
+  .about-text,
+  .topics-section,
+  .form-contacto,
+  .form-talleres {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  /* Ajustar botones */
+  .btn, .btn-cta {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* Imágenes fluidas */
+  img, .img-fluid {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Menú de navegación */
+  .navbar-nav {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  /* Tarjetas y contenedores */
+  .card {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Ajustar el hero principal */
+  .hero,
+  .podcast-hero,
+  .talleres-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ---- Tabletas (577px a 991px) ---- */
+@media (min-width: 577px) and (max-width: 991px) {
+
+  h1, h2, h3 {
+    font-size: 1.6rem;
+  }
+
+  .hero-photo img {
+    width: 90%;
+    margin: auto;
+    display: block;
+  }
+
+  .about-image {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+
+  .topics-section,
+  .talleres-hero,
+  .form-contacto {
+    padding: 2rem;
+  }
+
+  .btn, .btn-cta {
+    width: auto;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* ---- Escritorio grande (992px en adelante) ---- */
+@media (min-width: 992px) {
+  .hero-text-container {
+    text-align: left;
+  }
+}
+
+/* ==== Ajuste para centrar el bloque "Hola, soy Paola Guzman" en móviles ==== */
+@media (max-width: 768px) {
+  .about-text-box {
+    text-align: center !important;
+    margin: 0 auto !important;
+    padding: 1rem !important;
+    width: 100%;
+  }
+
+  .about-text-box h5,
+  .about-text-box h2 {
+    text-align: center !important;
+  }
+
+  .about-text-box p {
+    text-align: justify;
+  }
+
+  .about-text-box img,
+  .about-photo {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+}

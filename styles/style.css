@@ -8,7 +8,7 @@
    Ajustes para móviles y tabletas
    ============================== */
 
-/* ---- Móviles pequeños (hasta 576px) ---- */
+/* ---- Móviles pequeños (hasta 0 576px) ---- */
 @media (max-width: 576px) {
 
   /* Ajustar tamaño de texto */
@@ -65,7 +65,7 @@
   }
 }
 
-/* ---- Tabletas (577px a 991px) ---- */
+/* ---- Tabletas (577px a 991px) medium ---- */
 @media (min-width: 577px) and (max-width: 991px) {
 
   h1, h2, h3 {
@@ -102,29 +102,3 @@
   }
 }
 
-/* ==== Ajuste para centrar el bloque "Hola, soy Paola Guzman" en móviles ==== */
-@media (max-width: 768px) {
-  .about-text-box {
-    text-align: center !important;
-    margin: 0 auto !important;
-    padding: 1rem !important;
-    width: 100%;
-  }
-
-  .about-text-box h5,
-  .about-text-box h2 {
-    text-align: center !important;
-  }
-
-  .about-text-box p {
-    text-align: justify;
-  }
-
-  .about-text-box img,
-  .about-photo {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
-  }
-}

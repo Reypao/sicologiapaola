@@ -349,7 +349,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #1a2805ff;
+  background: rgb(9, 14, 1);
   min-height: 100vh;
   overflow: hidden;
 }
@@ -425,7 +425,7 @@ label {
 }
 
 .btn-custom {
-  background: rgba(143, 233, 146, 1);
+  background: rgb(50, 231, 56);
   color: #1f293a;
   font-weight: 600;
   border-radius: 45px;
@@ -437,7 +437,7 @@ label {
 }
 
 .text-light a {
-  color: rgba(77, 186, 38, 1);
+  color: rgb(68, 199, 21);
   text-decoration: none;
 }
 

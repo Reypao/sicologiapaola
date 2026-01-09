@@ -71,6 +71,12 @@ while ($c = $resultadoClientes->fetch_assoc()) {
                                 <li><a class="dropdown-item" href="talleres.html">Talleres</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a href="login.php" class="btn btn-outline-primary ms-lg-3">
+                                <i class="bi bi-box-arrow-in-right"></i> Login
+                            </a>
+                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -78,7 +84,7 @@ while ($c = $resultadoClientes->fetch_assoc()) {
     </header>
     <!-- creando el nuevo contenido -->
     <main class="py-5">
-        <a href="logout.php" class="btn btn-outline-danger">Cerrar sesion</a>
+
         <div class="container administracion-container">
             <h1 class="fw-bold mb-3 text-center admin-title">Administracion</h1>
             <!-- tabla de clientes -->

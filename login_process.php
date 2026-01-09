@@ -2,8 +2,8 @@
 session_start();
 
 // Example credentials (you should replace with a database check)
-$valid_user = 'admin';
-$valid_password = '123456'; // In production, store and compare hashed passwords!
+$valid_user = 'caiso';
+$valid_password = 'paola1'; // In production, store and compare hashed passwords!
 
 // Get form data
 $user = $_POST['user'] ?? '';
@@ -12,8 +12,8 @@ $password = $_POST['password'] ?? '';
 // Validate credentials
 if ($user === $valid_user && $password === $valid_password) {
     // Successful login
-    $_SESSION['user'] = $user;
-    header("Location: dashboard.php"); // Redirect to a protected page
+    $_SESSION['caiso'] = true;
+    header("Location: administracion.php"); // Redirect to a protected page
     exit();
 } else {
     // Failed login

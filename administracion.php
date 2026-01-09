@@ -1,4 +1,6 @@
 <?php
+
+require 'auth.php';
 require 'backend/db.php';
 
 $sqlClientes = "SELECT id_customer, nombre FROM customers ORDER BY nombre";
@@ -76,6 +78,7 @@ while ($c = $resultadoClientes->fetch_assoc()) {
     </header>
     <!-- creando el nuevo contenido -->
     <main class="py-5">
+        <a href="logout.php" class="btn btn-outline-danger">Cerrar sesion</a>
         <div class="container administracion-container">
             <h1 class="fw-bold mb-3 text-center admin-title">Administracion</h1>
             <!-- tabla de clientes -->

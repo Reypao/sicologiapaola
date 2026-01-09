@@ -67,13 +67,13 @@ while ($c = $resultadoClientes->fetch_assoc()) {
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="menuPaola">
                                 <li><a class="dropdown-item" href="sesionprivada.html">Sesion Privada</a></li>
-                                <li><a class="dropdown-item" href="sesiongrupal.html">Session Grupal</a></li>
+                                <li><a class="dropdown-item" href="sesiongrupal.html">Sesion Grupal</a></li>
                                 <li><a class="dropdown-item" href="talleres.html">Talleres</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="login.php" class="btn btn-outline-primary ms-lg-3">
-                                <i class="bi bi-box-arrow-in-right"></i> Login
+                            <a href="login.php" class="btn btn-outline-success ms-lg-3">
+                                <i class="bi bi-box-arrow-in-right"></i> Logout
                             </a>
                         </li>
 

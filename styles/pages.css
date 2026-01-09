@@ -313,7 +313,7 @@ main {
 }
 
 .section-customer,
-.section-private {
+.section-private, .section-group {
   background-color: var(--color-beige-fondo);
   padding: 2em;
 }

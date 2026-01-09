@@ -72,7 +72,7 @@ while ($c = $resultadoClientes->fetch_assoc()) {
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="login.php" class="btn btn-outline-success ms-lg-3">
+                            <a href="logout.php" class="btn btn-outline-success ms-lg-3">
                                 <i class="bi bi-box-arrow-in-right"></i> Logout
                             </a>
                         </li>
@@ -323,11 +323,11 @@ while ($c = $resultadoClientes->fetch_assoc()) {
 
                             <!--muestra agregar sesion privada de un cliente que ya existe en la base de datos 12/18/2025-->
                             <select name="id_customer" class="form-select" required>
-                                <?php while ($c = $resultadoClientes->fetch_assoc()): ?>
+                                <?php foreach ($clientes as $c): ?>
                                     <option value="<?= $c['id_customer'] ?>">
                                         <?= htmlspecialchars($c['nombre']) ?>
                                     </option>
-                                <?php endwhile; ?>
+                                <?php endforeach; ?>
                             </select>
                         </div>
                         <div class="mb-3">
@@ -359,27 +359,27 @@ while ($c = $resultadoClientes->fetch_assoc()) {
                 </div>
             </div>
         </div>
+    </div>
+    <!--modal agregar sesion grupal  12/24/2025-->
+    <div class="modal fade" id="modalAgregarSesionGrupal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalAgregarSesionGrupal">Agregar Sesion Grupal</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                </div>
 
-        <!--modal agregar sesion grupal  12/24/2025-->
-        <div class="modal fade" id="modalAgregarSesionGrupal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalAgregarSesionGrupal">Agregar Sesion Grupal</h5>
-                        <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
-                    </div>
+                <div class="modal-body">
+                    <form action="backend/add_sesiongrupal.php" method="post">
+                        <div class="mb-3">
+                            <label class="form-label">Titulo</label>
+                            <input type="text" name="group-titulo" class="form-control" required>
+                            <!--muestra crear sesion grupal  12/24/2025-->
 
-                    <div class="modal-body">
-                        <form action="backend/add_sesiongrupal.php" method="post">
-                            <div class="mb-3">
-                                <label class="form-label">Titulo</label>
-                                <input type="text" name="group-titulo" class="form-control" required>
-                                <!--muestra crear sesion grupal  12/24/2025-->
-
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Descripcion</label>
-                                <textarea name="group-descripcion" class="form-control" rows="3">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Descripcion</label>
+                            <textarea name="group-descripcion" class="form-control" rows="3"></textarea>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Fecha</label>

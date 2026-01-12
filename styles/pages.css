@@ -313,7 +313,8 @@ main {
 }
 
 .section-customer,
-.section-private, .section-group {
+.section-private,
+.section-group {
   background-color: var(--color-beige-fondo);
   padding: 2em;
 }
@@ -342,15 +343,18 @@ main {
 /*? login page Paola */
 
 .login-body {
+  background-image: url('../images/relaxBeach.webp'); /* Ajusta la ruta según tu estructura de carpetas */
+  background-size: cover;         /* Hace que la imagen cubra toda la pantalla */
+  background-position: center;    /* Centra la imagen */
+  background-repeat: no-repeat;   /* Evita que se repita */
+  height: 100vh;                  /* Asegura que cubra toda la altura de la ventana */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgb(9, 14, 1);
-  min-height: 100vh;
   overflow: hidden;
 }
 
@@ -369,7 +373,7 @@ main {
   left: 0;
   width: 32px;
   height: 6px;
-  background: #2c4766;
+  background: #c9921c;
   border-radius: 8px;
   transform-origin: 128px;
   transform: scale(2.2) rotate(calc(var(--i) * (360deg / 50)));
@@ -383,20 +387,25 @@ main {
   }
 
   25% {
-    background: #2c4766;
+    background: #4b3a0a;
   }
 }
 
+/* --- EFECTO GLASSMORPHISM AGREGADO AQUÍ --- */
 .login-box {
   position: relative;
   z-index: 1;
-  background: #1f293a;
+  background: rgba(100, 79, 26, 0.35); /* Fondo semitransparente */
+  backdrop-filter: blur(12px); /* Desenfoque para el efecto vidrio */
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(219, 130, 67, 0.15); /* Borde sutil tipo cristal */
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(157, 154, 15, 0.4);
   width: 100%;
   max-width: 400px;
 }
+/* --- FIN DEL CAMBIO --- */
 
 .login-box h2 {
   color: rgba(77, 186, 38, 1);
@@ -406,7 +415,7 @@ main {
 
 .form-control {
   background-color: transparent;
-  border: 2px solid #2c4766;
+  border: 2px solid #866621;
   color: #fff;
   border-radius: 40px;
   padding-left: 20px;
@@ -426,7 +435,7 @@ label {
 
 .btn-custom {
   background: rgb(50, 231, 56);
-  color: #1f293a;
+  color: #574314;
   font-weight: 600;
   border-radius: 45px;
 }
@@ -444,4 +453,3 @@ label {
 .text-light a:hover {
   text-decoration: underline;
 }
-  

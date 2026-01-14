@@ -314,7 +314,8 @@ main {
 
 .section-customer,
 .section-private,
-.section-group {
+.section-group,
+.section-talleres {
   background-color: var(--color-beige-fondo);
   padding: 2em;
 }
@@ -429,16 +430,22 @@ main {
 }
 
 label {
-  color: #fff;
+  color: #570d0d;
   margin-bottom: 5px;
 }
-
 .btn-custom {
+  
+ 
   background: rgb(50, 231, 56);
   color: #574314;
   font-weight: 600;
   border-radius: 45px;
 }
+
+ .btn-custom:hover{
+  background:none ;
+  border: 1px solid brown;
+ }
 
 .alert {
   margin-top: 15px;
@@ -453,3 +460,4 @@ label {
 .text-light a:hover {
   text-decoration: underline;
 }
+

@@ -39,9 +39,11 @@ while ($c = $resultadoClientes->fetch_assoc()) {
     <script src="scripts/edit-customer.js" defer></script>
     <script src="scripts/ver_reservas.js" defer></script>
     <script src="scripts/edit-sesionprivada.js" defer></script>
+    <script src="scripts/edit-taller.js" defer></script>
+
 </head>
 
-<body>
+<div>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light border-bottom sticky-top barra-nav">
             <div class="container-fluid">
@@ -125,6 +127,19 @@ while ($c = $resultadoClientes->fetch_assoc()) {
                     <?php include 'backend/list_group_sessions.php'; ?>
                 </div>
 
+            </section>
+
+            <!-- tabla de talleres 01/13/2025-->
+            <section class="mb-5 section-talleres">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h3 class="fw-bold">Talleres</h3>
+                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAgregarTaller">
+                        + Agregar Taller
+                    </button>
+                </div>
+                <div class="table-responsive border rounded p-3 shadow-sm bg-white">
+                    <?php include 'backend/list_talleres.php'; ?>
+                </div>
             </section>
 
         </div>
@@ -380,149 +395,289 @@ while ($c = $resultadoClientes->fetch_assoc()) {
                         <div class="mb-3">
                             <label class="form-label">Descripcion</label>
                             <textarea name="group-descripcion" class="form-control" rows="3"></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Fecha</label>
-                                <input type="date" name="group-fecha"  class="form-control" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Hora</label>
-                                <input type="time" name="group-hora" class="form-control" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Modalidad</label>
-                                <select name="group-modalidad" class="form-select">
-                                    <option value="online" selected>Online</option>
-                                    <option value="presencial">Presencial</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Lugar</label>
-                                <input type="text" name="group-lugar" class="form-control" placeholder="(opcional)"></input>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Cupo</label>
-                                <input type="number" name="group-cupo" min="1" max="10" value="10" class="form-control" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Estado</label>
-                                <select name="group-estado"  class="form-select">
-                                    <option value="activa" selected>Activa</option>
-                                    <option value="completa">Completa</option>
-                                    <option value="finalizado">Finalizado</option>
-                                </select>
-                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Fecha</label>
+                            <input type="date" name="group-fecha" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Hora</label>
+                            <input type="time" name="group-hora" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Modalidad</label>
+                            <select name="group-modalidad" class="form-select">
+                                <option value="online" selected>Online</option>
+                                <option value="presencial">Presencial</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Lugar</label>
+                            <input type="text" name="group-lugar" class="form-control" placeholder="(opcional)"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Cupo</label>
+                            <input type="number" name="group-cupo" min="1" max="10" value="10" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Estado</label>
+                            <select name="group-estado" class="form-select">
+                                <option value="activa" selected>Activa</option>
+                                <option value="completa">Completa</option>
+                                <option value="finalizado">Finalizado</option>
+                            </select>
+                        </div>
 
-                            <div class="text-end">
-                                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
-                                <button class="btn btn-primary" type="submit">Guardar</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Toast de confirmación agregar clientes -->
-        <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
-            <div id="toastClienteOk" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="d-flex">
-                    <div class="toast-body">
-                        ✔ Cliente agregado con éxito.
-                    </div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                        <div class="text-end">
+                            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-primary" type="submit">Guardar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
 
-        <?php if (isset($_GET['ok'])): ?>
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    var toastElement = document.getElementById('toastClienteOk');
-                    var toast = new bootstrap.Toast(toastElement, {
-                        delay: 2500
-                    });
-                    toast.show();
+    <!--modal agregar Taller  01/13/2026-->
+    <div class="modal fade" id="modalAgregarTaller" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalAgregarTallerLabel">Agregar Taller</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="backend/add_taller.php" method="post">
+                        <div class="mb-3">
+                            <label class="form-label">Título del Taller</label>
+                            <input type="text" name="taller-titulo" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Descripción</label>
+                            <textarea name="taller-descripcion" class="form-control" rows="3" required></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Fecha</label>
+                            <input type="date" name="taller-fecha" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Hora</label>
+                            <input type="time" name="taller-hora" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Modalidad</label>
+                            <select name="taller-modalidad" class="form-select">
+                                <option value="online" selected>Online</option>
+                                <option value="presencial">Presencial</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Lugar</label>
+                            <input type="text" name="taller-lugar" class="form-control" placeholder="(opcional)">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Cupo Máximo</label>
+                            <input type="number" name="taller-cupo" min="1" max="50" value="10" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Estado</label>
+                            <select name="taller-estado" class="form-select">
+                                <option value="activo" selected>Activo</option>
+                                <option value="completo">Completo</option>
+                                <option value="finalizado">Finalizado</option>
+                            </select>
+                        </div>
+
+                        <div class="text-end">
+                            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-primary" type="submit">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal editar Taller  01/13/2026 -->
+    <div class="modal fade" id="modalEditarTaller" tabindex="-1" aria-labelledby="modalEditarTallerLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEditarTallerLabel">Editar Taller</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="backend/update_taller.php" method="post">
+                        <input type="hidden" name="id_taller" id="taller-id">
+
+                        <div class="mb-3">
+                            <label class="form-label">Título</label>
+                            <input type="text" name="taller-titulo" id="taller-titulo" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Descripción</label>
+                            <textarea name="taller-descripcion" id="taller-descripcion" class="form-control" rows="3" required></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Fecha</label>
+                            <input type="date" name="taller-fecha" id="taller-fecha" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Hora</label>
+                            <input type="time" name="taller-hora" id="taller-hora" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Modalidad</label>
+                            <select name="taller-modalidad" id="taller-modalidad" class="form-select">
+                                <option value="online">Online</option>
+                                <option value="presencial">Presencial</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Lugar</label>
+                            <input type="text" name="taller-lugar" id="taller-lugar" class="form-control" placeholder="(opcional)">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Cupo</label>
+                            <input type="number" name="taller-cupo" id="taller-cupo" min="1" max="50" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Estado</label>
+                            <select name="taller-estado" id="taller-estado" class="form-select">
+                                <option value="activo">Activo</option>
+                                <option value="completo">Completo</option>
+                                <option value="finalizado">Finalizado</option>
+                            </select>
+                        </div>
+
+                        <div class="text-end">
+                            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-primary" type="submit">Guardar Cambios</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Toast de confirmación agregar clientes -->
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
+        <div id="toastClienteOk" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    ✔ Cliente agregado con éxito.
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
+
+    <?php if (isset($_GET['ok'])): ?>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var toastElement = document.getElementById('toastClienteOk');
+                var toast = new bootstrap.Toast(toastElement, {
+                    delay: 2500
                 });
-            </script>
-        <?php endif; ?>
+                toast.show();
+            });
+        </script>
+    <?php endif; ?>
 
-        <!-- Toast de edicion -->
-        <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
-            <div id="toastClienteEditado" class="toast align-items-center text-white bg-warning border-0" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="d-flex">
-                    <div class="toast-body">
-                        ✔ Cliente editado con éxito.
-                    </div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+    <!-- Toast de edicion -->
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
+        <div id="toastClienteEditado" class="toast align-items-center text-white bg-warning border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    ✔ Cliente editado con éxito.
                 </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
             </div>
         </div>
+    </div>
 
-        <?php if (isset($_GET['updated'])): ?>
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    var toastElement = document.getElementById('toastClienteEditado');
-                    var toast = new bootstrap.Toast(toastElement, {
-                        delay: 2500
-                    });
-                    toast.show();
+    <?php if (isset($_GET['updated'])): ?>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var toastElement = document.getElementById('toastClienteEditado');
+                var toast = new bootstrap.Toast(toastElement, {
+                    delay: 2500
                 });
-            </script>
-        <?php endif; ?>
+                toast.show();
+            });
+        </script>
+    <?php endif; ?>
 
-        <!-- Toast de eliminacion -->
-        <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
-            <div id="toastClienteEliminado" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="d-flex">
-                    <div class="toast-body">
-                        ✔ Cliente eliminado con éxito.
-                    </div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+    <!-- Toast de eliminacion -->
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
+        <div id="toastClienteEliminado" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    ✔ Cliente eliminado con éxito.
                 </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
             </div>
         </div>
+    </div>
 
-        <?php if (isset($_GET['deleted']) && $_GET['deleted'] == 1): ?>
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    var toastElement = document.getElementById('toastClienteEliminado');
-                    var toast = new bootstrap.Toast(toastElement, {
-                        delay: 3500
-                    });
-                    toast.show();
+    <?php if (isset($_GET['deleted']) && $_GET['deleted'] == 1): ?>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var toastElement = document.getElementById('toastClienteEliminado');
+                var toast = new bootstrap.Toast(toastElement, {
+                    delay: 3500
                 });
-            </script>
-        <?php endif; ?>
+                toast.show();
+            });
+        </script>
+    <?php endif; ?>
 
 
-        <!-- Toast de error -->
-        <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
-            <div id="toastErrorFK" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="d-flex">
-                    <div class="toast-body">
-                        ✔ No se puede eliminar Cliente porque tiene sesiones asociadas.
-                    </div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+    <!-- Toast de error -->
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
+        <div id="toastErrorFK" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    ✔ No se puede eliminar Cliente porque tiene sesiones asociadas.
                 </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
             </div>
         </div>
+    </div>
 
-        <?php if (isset($_GET['error']) && $_GET['error'] === 'foreignkey'): ?>
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    var toastElement = document.getElementById('toastErrorFK');
-                    var toast = new bootstrap.Toast(toastElement, {
-                        delay: 3500
-                    });
-                    toast.show();
+    <?php if (isset($_GET['error']) && $_GET['error'] === 'foreignkey'): ?>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var toastElement = document.getElementById('toastErrorFK');
+                var toast = new bootstrap.Toast(toastElement, {
+                    delay: 3500
                 });
-            </script>
-        <?php endif; ?>
+                toast.show();
+            });
+        </script>
+    <?php endif; ?>
 
-        <!-- script the bootstrp -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- script the bootstrp -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</div>
 </body>
 
 </html>

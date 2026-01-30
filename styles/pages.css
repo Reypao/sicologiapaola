@@ -417,7 +417,7 @@ main {
 .form-control {
   background-color: transparent;
   border: 2px solid #866621;
-  color: #fff;
+  color: #390c0c;
   border-radius: 40px;
   padding-left: 20px;
 }
@@ -425,7 +425,6 @@ main {
 .form-control:focus {
   border-color: rgba(28, 124, 70, 1);
   box-shadow: none;
-  color: #fff;
   background-color: transparent;
 }
 

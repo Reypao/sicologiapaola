@@ -36,6 +36,8 @@ while ($c = $resultadoClientes->fetch_assoc()) {
     <link href="https://fonts.googleapis.com/css2?family=Beth+Ellen&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" type="image/jpg" href="images/PsicologiaPao-icon.jpg">
+        <!-- script the bootstrp -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/edit-customer.js" defer></script>
     <script src="scripts/ver_reservas.js" defer></script>
     <script src="scripts/edit-sesionprivada.js" defer></script>
@@ -43,7 +45,7 @@ while ($c = $resultadoClientes->fetch_assoc()) {
 
 </head>
 
-<div>
+<body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light border-bottom sticky-top barra-nav">
             <div class="container-fluid">
@@ -84,6 +86,7 @@ while ($c = $resultadoClientes->fetch_assoc()) {
             </div>
         </nav>
     </header>
+
     <!-- creando el nuevo contenido -->
     <main class="py-5">
 
@@ -141,9 +144,9 @@ while ($c = $resultadoClientes->fetch_assoc()) {
                     <?php include 'backend/list_talleres.php'; ?>
                 </div>
             </section>
-
         </div>
     </main>
+
     <footer class="border-top py-3 footer'bg">
         <div
             class="container d-flex flex-column flex-md-row align-items-center justify-content-between text-white footer-container">
@@ -189,6 +192,7 @@ while ($c = $resultadoClientes->fetch_assoc()) {
 
         </div>
     </footer>
+
     <!--modal agregar Cliente  -->
     <div class="modal fade" id="modalAgregarCliente" tabindex="-1" aria-labelledby="modalAgregarClinteLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -355,7 +359,7 @@ while ($c = $resultadoClientes->fetch_assoc()) {
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Estado</label>
-                            <select name="estado" id="sesion_estado" class="form-select">
+                            <select name="estado" id="add_sesion_estado" class="form-select">
                                 <option value="pendiente">Pendiente</option>
                                 <option value="confirmada">Confirmada</option>
                                 <option value="cancelada">Cancelada</option>
@@ -363,7 +367,7 @@ while ($c = $resultadoClientes->fetch_assoc()) {
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Comentario</label>
-                            <textarea name="comentario" id="sesion-comentario" class="form-control" rows="3"></textarea>
+                            <textarea name="comentario" id="add_sesion-comentario" class="form-control" rows="3"></textarea>
                         </div>
 
                         <div class="text-end">
@@ -601,7 +605,7 @@ while ($c = $resultadoClientes->fetch_assoc()) {
         </script>
     <?php endif; ?>
 
-    <!-- Toast de edicion -->
+    <!-- Toast de edicion Cliente-->
     <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
         <div id="toastClienteEditado" class="toast align-items-center text-white bg-warning border-0" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
@@ -625,7 +629,7 @@ while ($c = $resultadoClientes->fetch_assoc()) {
         </script>
     <?php endif; ?>
 
-    <!-- Toast de eliminacion -->
+    <!-- Toast de eliminacion cliente -->
     <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
         <div id="toastClienteEliminado" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
@@ -650,7 +654,7 @@ while ($c = $resultadoClientes->fetch_assoc()) {
     <?php endif; ?>
 
 
-    <!-- Toast de error -->
+    <!-- Toast de error cliente-->
     <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
         <div id="toastErrorFK" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
@@ -674,10 +678,6 @@ while ($c = $resultadoClientes->fetch_assoc()) {
         </script>
     <?php endif; ?>
 
-    <!-- script the bootstrp -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-</div>
 </body>
 
 </html>

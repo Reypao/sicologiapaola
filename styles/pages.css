@@ -139,7 +139,7 @@
 
 }
 
-.about-float-img{
+.about-float-img {
   float: right;              /* o left si la querés del otro lado */
   width: 280px;              /* ajustable */
   max-width: 40%;            /* que no se coma todo el texto */
@@ -148,7 +148,7 @@
   box-shadow: 0 8px 24px rgba(0,0,0,.15);
 }
 
-/ Importante: para que el contenedor "abrace" el float */
+/* Importante: para que el contenedor "abrace" el float */
 .about-me::after{
   content: "";
   display: block;

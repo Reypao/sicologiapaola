@@ -119,13 +119,23 @@
 
 /* HERO full background with opacity overlay */
 .hero-grupal {
-  background-image: url('../images/grupalPaoWeb.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 50vh;
-  position: relative;
   color: #fff;
+  padding: 2em;
+}
+
+.sobremiA-img img {
+  width: 50%;
+  height: auto;
+}
+
+.container {
+  max-width: 100%;
+  display: flex;
+  gap: 1em;
+}
+
+.about-me {
+  width: 40em;
 }
 
 /* Gradient + opacity overlay */
@@ -351,11 +361,16 @@ main {
 /*? login page Paola */
 
 .login-body {
-  background-image: url('../images/relaxBeach.webp'); /* Ajusta la ruta según tu estructura de carpetas */
-  background-size: cover;         /* Hace que la imagen cubra toda la pantalla */
-  background-position: center;    /* Centra la imagen */
-  background-repeat: no-repeat;   /* Evita que se repita */
-  height: 100vh;                  /* Asegura que cubra toda la altura de la ventana */
+  background-image: url('../images/relaxBeach.webp');
+  /* Ajusta la ruta según tu estructura de carpetas */
+  background-size: cover;
+  /* Hace que la imagen cubra toda la pantalla */
+  background-position: center;
+  /* Centra la imagen */
+  background-repeat: no-repeat;
+  /* Evita que se repita */
+  height: 100vh;
+  /* Asegura que cubra toda la altura de la ventana */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -403,16 +418,20 @@ main {
 .login-box {
   position: relative;
   z-index: 1;
-  background: rgba(100, 79, 26, 0.35); /* Fondo semitransparente */
-  backdrop-filter: blur(12px); /* Desenfoque para el efecto vidrio */
+  background: rgba(100, 79, 26, 0.35);
+  /* Fondo semitransparente */
+  backdrop-filter: blur(12px);
+  /* Desenfoque para el efecto vidrio */
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(219, 130, 67, 0.15); /* Borde sutil tipo cristal */
+  border: 1px solid rgba(219, 130, 67, 0.15);
+  /* Borde sutil tipo cristal */
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(157, 154, 15, 0.4);
   width: 100%;
   max-width: 400px;
 }
+
 /* --- FIN DEL CAMBIO --- */
 
 .login-box h2 {
@@ -439,19 +458,20 @@ label {
   color: #570d0d;
   margin-bottom: 5px;
 }
+
 .btn-custom {
-  
- 
+
+
   background: rgb(50, 231, 56);
   color: #574314;
   font-weight: 600;
   border-radius: 45px;
 }
 
- .btn-custom:hover{
-  background:none ;
+.btn-custom:hover {
+  background: none;
   border: 1px solid brown;
- }
+}
 
 .alert {
   margin-top: 15px;
@@ -466,4 +486,3 @@ label {
 .text-light a:hover {
   text-decoration: underline;
 }
-

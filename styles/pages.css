@@ -124,7 +124,7 @@
 }
 
 .sobremiA-img img {
-  width: 50%;
+  width: 30em;
   height: auto;
 }
 
@@ -135,7 +135,24 @@
 }
 
 .about-me {
-  width: 40em;
+  width:em;
+
+}
+
+.about-float-img{
+  float: right;              /* o left si la querés del otro lado /
+  width: 280px;              /* ajustable */
+  max-width: 40%;            /* que no se coma todo el texto */
+  margin: 0 0 16px 16px;     /* separación del texto */
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.15);
+}
+
+/ Importante: para que el contenedor "abrace" el float */
+.about-me::after{
+  content: "";
+  display: block;
+  clear: both;
 }
 
 /* Gradient + opacity overlay */

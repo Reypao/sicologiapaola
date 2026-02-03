@@ -140,7 +140,7 @@
 }
 
 .about-float-img{
-  float: right;              /* o left si la querés del otro lado /
+  float: right;              /* o left si la querés del otro lado */
   width: 280px;              /* ajustable */
   max-width: 40%;            /* que no se coma todo el texto */
   margin: 0 0 16px 16px;     /* separación del texto */

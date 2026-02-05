@@ -1,5 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
+:root{
+  --text-base: 1.125rem;   /* 18px aprox */
+  --text-lead: 1.125rem;   /* igual al base para consistencia */
+  --text-small: 1rem;      /* 16px */
+  --line-base: 1.7;
+}
+
+body{
+  font-size: var(--text-base);
+  line-height: var(--line-base);
+}
+
+
 /*? SOBRE MI  */
 
 /* about page "sobre mi" */
@@ -8,6 +21,31 @@
   font-family: 'Permanent Marker', cursive;
   color: #af802b;
   font-size: 2em;
+}
+
+/* ABOUT layout limpio */
+.about-section .sobremiA-img img{
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 14px 30px rgba(0,0,0,.12);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.about-section .sobremiA-img img:hover{
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 18px 40px rgba(0,0,0,.16);
+}
+
+/* Card suave para el texto */
+.about-me{
+  background: rgba(255,255,255,.65);
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 18px;
+  padding: clamp(16px, 2vw, 28px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.08);
+  backdrop-filter: blur(6px);
+  
 }
 
 .about-section {
@@ -27,8 +65,8 @@
 }
 
 .about-paragrah {
-  font-size: 1.3rem;
-  line-height: 1.7;
+  font-size: var(--text-base);
+  line-height: var(--line-base);
   color: #090808;
 }
 
@@ -84,11 +122,10 @@
 
 /* Temas a discutir */
 
-.topics-section {
-  background: #fafafa;
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 6rem;
+.topics-section .lead {
+  font-size: var(--text-base);
+  line-height: var(--line-base);
+  
 }
 
 .topic-logo {
@@ -104,6 +141,7 @@
 .topics-title {
   font-family: "Beth Ellen", cursive;
 }
+
 
 /*? sesion privada/grupal  */
 
@@ -135,7 +173,7 @@
 }
 
 .about-me {
-  width:em;
+  width: em;
 
 }
 

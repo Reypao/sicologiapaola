@@ -25,7 +25,6 @@ body{
 
 /* ABOUT layout limpio */
 .about-section .sobremiA-img img{
-  width: 100%;
   height: auto;
   border-radius: 18px;
   box-shadow: 0 14px 30px rgba(0,0,0,.12);
@@ -131,8 +130,8 @@ body{
 .topic-logo {
   position: absolute;
   z-index: 0;
-  bottom: 60px;
-  right: 400px;
+  bottom: 0px;
+  right: 30px;
   width: 250px;
   height: auto;
   border-radius: 50%;
@@ -154,6 +153,10 @@ body{
 }
 
 /* sesion grupal */
+.temas-discutir {
+  display: flex;
+  flex-direction: column;
+}
 
 /* HERO full background with opacity overlay */
 .hero-grupal {
@@ -162,18 +165,20 @@ body{
 }
 
 .sobremiA-img img {
-  width: 30em;
+  width: 29.2em;
   height: auto;
 }
 
-.container {
-  max-width: 100%;
+.container-sobremi {
   display: flex;
   gap: 1em;
+  max-width: 100%;
+  justify-content: space-evenly;
+  
 }
 
 .about-me {
-  width: em;
+  max-width: 55em;
 
 }
 

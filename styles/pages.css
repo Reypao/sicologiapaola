@@ -48,7 +48,7 @@ body{
 }
 
 .about-section {
-  background-color: #fbf4f4;
+  background-color: --hero-teal #0f9e9a;
 }
 
 .about-text-box {
@@ -129,8 +129,7 @@ body{
 
 .topic-logo {
   position: absolute;
-  z-index: 0;
-  bottom: 0px;
+  z-index: 0; 
   right: 30px;
   width: 250px;
   height: auto;
